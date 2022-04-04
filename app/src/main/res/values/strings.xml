@@ -1,0 +1,13 @@
+<resources>
+    <string name="splash">Splash Screen</string>
+    <string name="menu">Menu Screen</string>
+    <string name="game">Game Screen</string>
+    <string name="help">Help Screen</string>
+    <string name="scores">Scores Screen</string>
+    <string name="settings">Settings Screen</string>
+    <string name="menu_settings_game">Settings</string>
+    <string name="menu_quick_game"> Qiuck Game </string>
+    <string name="menu_start_game">Start Game</string>
+    <string name="menu_about">About </string>
+    <string name="menu_exit">Exit</string>
+</resources>

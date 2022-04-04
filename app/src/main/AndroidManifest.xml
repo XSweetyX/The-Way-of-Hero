@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.project">
+
+    <application
+        android:name=".YourApplication"
+        android:screenOrientation="landscape"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/splash"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true">
+
+
+        <activity
+            android:name=".MenuClasses.BaseActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MenuClasses.SplashActivity"
+            android:exported="true"
+            android:theme="@style/MyTheme">
+        </activity>
+        <activity
+            android:name=".MenuClasses.MapActivity"
+            android:exported="true"
+            android:theme="@style/MyTheme">
+        </activity>
+        <activity
+            android:name=".MenuClasses.InventoryActivity"
+            android:exported="true"
+            android:theme="@style/MyTheme">
+        </activity>
+        <activity
+            android:name=".GameClasses.Interface.ScoresActivity"
+            android:exported="true"
+            android:theme="@style/MyTheme">
+        </activity>
+        <activity
+            android:name=".MenuClasses.SettingActivity"
+            android:exported="true"
+            android:theme="@style/MyTheme">
+        </activity>
+        <activity
+            android:name=".MenuClasses.MenuActivity"
+            android:exported="true"
+            android:theme="@style/MyTheme">
+        </activity>
+        <activity
+            android:name=".MenuClasses.LoseActivity"
+            android:exported="true"
+            android:theme="@style/MyTheme">
+        </activity>
+        <activity
+            android:name=".MenuClasses.HelpActivity"
+            android:exported="true"
+            android:theme="@style/MyTheme">
+        </activity>
+        <activity
+            android:name=".GameClasses.Interface.GameActivity"
+            android:exported="true"
+            android:theme="@style/MyTheme">
+        </activity>
+        <activity
+            android:name=".GameClasses.Interface.ResultActivity"
+            android:exported="true"
+            android:theme="@style/MyTheme">
+        </activity>
+        <activity
+            android:name=".GameClasses.Levels.LevelMainActivity"
+            android:exported="true"
+            android:theme="@style/MyTheme">
+        </activity>
+
+        <service android:enabled="true" android:name=".GameClasses.MyService" />
+        <service android:enabled="true" android:name=".GameClasses.Interface.Sounds" />
+
+    </application>
+
+</manifest>

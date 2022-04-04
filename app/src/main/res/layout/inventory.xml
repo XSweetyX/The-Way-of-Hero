@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/inventoryimg1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/inventory" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/inventory_list"
+            android:layout_width="256dp"
+            android:layout_height="406dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="1dp"
+            app:layout_constraintStart_toEndOf="@+id/weapon"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+        </ListView>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="51dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="664dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="347dp"
+            android:text="X"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/body_img"
+            android:layout_width="106dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="176dp"
+            android:layout_marginTop="152dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/weapon"
+            android:layout_width="106dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="296dp"
+            android:layout_marginTop="156dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/neck_chain"
+            android:layout_width="106dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/shield"
+            android:layout_width="106dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="156dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/helmet"
+            android:layout_width="106dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ring"
+            android:layout_width="106dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="296dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/boots"
+            android:layout_width="106dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/body_img" />
+
+        <ImageView
+            android:id="@+id/pet"
+            android:layout_width="97dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="292dp"
+            android:layout_marginTop="296dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/aura"
+            android:layout_width="106dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="296dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

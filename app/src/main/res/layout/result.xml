@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="315dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="44dp"
+        android:textSize="60sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/item_you_got"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="21dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ItemPreviewText"
+        app:srcCompat="@drawable/skill1" />
+
+    <TextView
+        android:id="@+id/ItemPreviewText"
+        android:layout_width="315dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="10dp"
+        android:text="YOUR ITEMS :"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_text" />
+
+    <Button
+        android:id="@+id/continue_but"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="150dp"
+        android:text="Continue"
+        app:layout_constraintStart_toEndOf="@+id/rerun_but"
+        app:layout_constraintTop_toBottomOf="@+id/ItemPreviewText" />
+
+    <Button
+        android:id="@+id/rerun_but"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="245dp"
+        android:layout_marginTop="150dp"
+        android:text="Rerun"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ItemPreviewText" />
+</androidx.constraintlayout.widget.ConstraintLayout>

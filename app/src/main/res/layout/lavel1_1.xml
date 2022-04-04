@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:text="@string/menu"
+    tools:context=".MenuClasses.MapActivity">
+
+    <FrameLayout
+        android:id="@+id/framel"
+        android:layout_width="730dp"
+        android:layout_height="410dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/level1l1" />
+
+        <com.example.project.GameClasses.Levels.LevelView
+            android:id="@+id/mySurfaceView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="99dp"
+                android:layout_height="81dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="4dp"
+                android:textSize="60sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/skill1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="316dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/skill1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/skill2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="196dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/skill1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/skill3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="436dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/skill1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+</RelativeLayout>
