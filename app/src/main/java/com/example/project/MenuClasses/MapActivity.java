@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.project.GameClasses.Interface.FogofWarLogistic;
 import com.example.project.GameClasses.Interface.Global;
 import com.example.project.GameClasses.Levels.LevelMainActivity;
 import com.example.project.R;
@@ -24,9 +25,8 @@ public class MapActivity extends BaseActivity {
     Button level1_9 ;
     Button level1_10 ;
     Button inventoryb;
-    //private Organizer organizer = new Organizer();
-
-    public static int number = 0;
+    public FogofWarLogistic fogofWarLogistic = new FogofWarLogistic();
+    //public static int number = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,19 @@ public class MapActivity extends BaseActivity {
         level1_10 =findViewById(R.id.buttonl10);
         inventoryb = findViewById(R.id.button2);
 
+
+        level1_2.setClickable(false);
+        level1_3.setClickable(false);
+        level1_4.setClickable(false);
+        level1_5.setClickable(false);
+        level1_6.setClickable(false);
+        level1_7.setClickable(false);
+        level1_8.setClickable(false);
+        level1_9.setClickable(false);
+        level1_10.setClickable(false);
+        if(fogofWarLogistic.getLevelsStorageInfo(2)==1){
+            level1_2.setClickable(true);
+        }
         lavel1_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -145,10 +158,7 @@ public class MapActivity extends BaseActivity {
         });
 
     }
-    /*
 
-
-     */
 
 }
 

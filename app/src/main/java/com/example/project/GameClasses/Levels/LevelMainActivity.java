@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.project.GameClasses.Entities.Enemies.Enemy;
 import com.example.project.GameClasses.Entities.Enemies.Slime;
 import com.example.project.GameClasses.Entities.Player;
+import com.example.project.GameClasses.Interface.FogofWarLogistic;
 import com.example.project.GameClasses.Interface.ResultActivity;
 import com.example.project.MenuClasses.BaseActivity;
 import com.example.project.MenuClasses.LoseActivity;
@@ -29,6 +30,7 @@ import java.util.Random;
 public class LevelMainActivity extends BaseActivity {
    // private Organizer organizer = new Organizer();
     //private MapActivity mapActivity = new MapActivity();
+    public FogofWarLogistic fogofWarLogisticLevelMainActivity = new FogofWarLogistic();;
     private Enemy enemy =new Enemy();
     //Player player = new Player();
     int min = 0;
@@ -67,6 +69,7 @@ public class LevelMainActivity extends BaseActivity {
 
         setContentView(R.layout.lavel1_1);
 
+
         playerHealthView = findViewById(R.id.textView2);
         Button skill1 = findViewById(R.id.skill1);
         Button skill2 = findViewById(R.id.skill2);
@@ -87,6 +90,7 @@ public class LevelMainActivity extends BaseActivity {
                         playerHealthView.setText(""+player.getHealth(player));
                             if (LevelView.slime.getEHealth(slime) <= 0) {
                                 LevelMainActivity.this.takeVictory();
+                                fogofWarLogisticLevelMainActivity.setLevelsStorage(1,1);
                                 // Toast.makeText(getApplicationContext(), "randomize= "+randomize, Toast.LENGTH_SHORT).show();
                                 //  slime=null;
                             }else if(LevelView.player.getHealth(player)<=0){
