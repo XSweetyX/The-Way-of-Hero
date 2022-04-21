@@ -10,23 +10,16 @@ import com.example.project.GameClasses.Levels.LevelMainActivity;
 import com.example.project.R;
 
 public class LoseActivity extends BaseActivity{
-    Button rerunlbut;
+
     Button continuelbut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lose);
-        rerunlbut = findViewById(R.id.rerun_lose_but);
-        continuelbut = findViewById(R.id.continue_lose_but);
-        rerunlbut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoseActivity.this, LevelMainActivity.class));
 
-                LoseActivity.this.finish();
-            }
-        });
+        continuelbut = findViewById(R.id.continue_lose_but);
+
         continuelbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -10,8 +10,8 @@
 
 
     <ImageView
-        android:layout_width="1984dp"
-        android:layout_height="720dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
 
         android:adjustViewBounds="false"
         android:cropToPadding="false"
@@ -20,158 +20,182 @@
         android:src="@drawable/mainmap" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
         <Button
             android:id="@+id/button2"
             android:layout_width="59dp"
-            android:layout_height="59dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="218dp"
-            android:layout_marginBottom="136dp"
+            android:layout_height="wrap_content"
+            android:clickable="false"
             android:text="Button"
             android:visibility="visible"
-            android:clickable="false"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.023"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.716" />
 
         <Button
             android:id="@+id/button4"
             android:layout_width="59dp"
             android:layout_height="59dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="140dp"
-            android:layout_marginBottom="20dp"
             android:text="Button"
             android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.023"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.534" />
 
         <Button
             android:id="@+id/button5"
             android:layout_width="59dp"
             android:layout_height="59dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="64dp"
-            android:layout_marginBottom="16dp"
             android:text="Button"
-            app:layout_constraintBottom_toTopOf="@+id/button4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.023"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.326" />
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="66dp"
-            android:layout_height="59dp"
-            android:layout_marginStart="128dp"
-            android:layout_marginBottom="96dp"
+            android:layout_width="74dp"
+            android:layout_height="43dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="51dp"
+            android:layout_marginEnd="12dp"
             android:background="@android:drawable/menuitem_background"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.195"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.681" />
 
         <Button
             android:id="@+id/buttonl2"
             android:layout_width="55dp"
             android:layout_height="48dp"
-            android:layout_marginStart="220dp"
-            android:layout_marginBottom="120dp"
             android:background="@android:drawable/menuitem_background"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.313"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.68" />
 
         <Button
             android:id="@+id/buttonl3"
             android:layout_width="40dp"
             android:layout_height="39dp"
-            android:layout_marginTop="195dp"
-            android:layout_marginEnd="436dp"
             android:background="@android:drawable/menuitem_background"
             android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.367"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.532" />
 
         <Button
             android:id="@+id/buttonl4"
             android:layout_width="42dp"
             android:layout_height="35dp"
-            android:layout_marginStart="125dp"
-            android:layout_marginTop="177dp"
             android:background="@android:drawable/menuitem_background"
             android:visibility="visible"
-            app:layout_constraintStart_toEndOf="@+id/button4"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.29"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.462" />
 
         <Button
             android:id="@+id/buttonl5"
             android:layout_width="40dp"
             android:layout_height="38dp"
-            android:layout_marginStart="152dp"
-            android:layout_marginTop="136dp"
             android:background="@android:drawable/menuitem_background"
             android:visibility="visible"
-            app:layout_constraintStart_toEndOf="@+id/button4"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.328"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.372" />
 
         <Button
             android:id="@+id/buttonl6"
             android:layout_width="45dp"
             android:layout_height="46dp"
             android:layout_marginStart="27dp"
-            android:layout_marginTop="97dp"
             android:background="@android:drawable/menuitem_background"
             android:visibility="visible"
-            app:layout_constraintStart_toEndOf="@+id/buttonl5"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.405"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.284" />
 
         <Button
             android:id="@+id/buttonl7"
             android:layout_width="48dp"
             android:layout_height="46dp"
-            android:layout_marginStart="34dp"
-            android:layout_marginTop="77dp"
             android:background="@android:drawable/menuitem_background"
             android:visibility="visible"
-            app:layout_constraintStart_toEndOf="@+id/buttonl6"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.541"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.21" />
 
         <Button
             android:id="@+id/buttonl8"
             android:layout_width="56dp"
             android:layout_height="46dp"
             android:layout_marginStart="38dp"
-            android:layout_marginTop="44dp"
             android:background="@android:drawable/menuitem_background"
             android:visibility="visible"
-            app:layout_constraintStart_toEndOf="@+id/buttonl7"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.667"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.128" />
 
         <Button
             android:id="@+id/buttonl9"
             android:layout_width="48dp"
             android:layout_height="45dp"
-            android:layout_marginStart="9dp"
-            android:layout_marginTop="24dp"
             android:background="@android:drawable/menuitem_background"
             android:visibility="visible"
-            app:layout_constraintStart_toEndOf="@+id/buttonl8"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.773"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.087" />
 
         <Button
             android:id="@+id/buttonl10"
             android:layout_width="61dp"
             android:layout_height="46dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="18dp"
             android:background="@android:drawable/menuitem_background"
             android:visibility="visible"
-            app:layout_constraintStart_toEndOf="@+id/buttonl9"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.882"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.049" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

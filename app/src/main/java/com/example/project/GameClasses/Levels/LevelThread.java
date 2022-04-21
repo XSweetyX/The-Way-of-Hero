@@ -93,7 +93,7 @@ public class LevelThread extends Thread{
 
 
         backgroundBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.level11bg);
-        resizedBitmap=Bitmap.createScaledBitmap(backgroundBitmap, 2500, 2000, true);
+        resizedBitmap=Bitmap.createScaledBitmap(backgroundBitmap, 1900, 1300, true);
 
         playerbitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.playernew);
 
