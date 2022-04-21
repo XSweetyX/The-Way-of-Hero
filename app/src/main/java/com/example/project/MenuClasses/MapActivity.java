@@ -7,31 +7,34 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.project.GameClasses.Interface.FogofWarLogistic;
-import com.example.project.GameClasses.Interface.Global;
 import com.example.project.GameClasses.Levels.LevelMainActivity;
 import com.example.project.R;
 
 public class MapActivity extends BaseActivity {
 
-    Button lavel1_1 ;
-    Button level1_2 ;
-    Button level1_3 ;
-    Button level1_4 ;
-    Button level1_5 ;
-    Button level1_6 ;
-    Button level1_7 ;
-    Button level1_8 ;
-    Button level1_9 ;
-    Button level1_10 ;
+    public static Button lavel1_1 ;
+    public static Button level1_2 ;
+    public static Button level1_3 ;
+    public static Button level1_4 ;
+    public static Button level1_5 ;
+    public static Button level1_6 ;
+    public static Button level1_7 ;
+    public static Button level1_8 ;
+    public static Button level1_9 ;
+    public static Button level1_10 ;
     Button inventoryb;
-    public FogofWarLogistic fogofWarLogistic = new FogofWarLogistic();
+    Intent intent;
+    Bundle arguments1;
+
     //public static int number = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map);
+
+
+
         lavel1_1=findViewById(R.id.button3);
         level1_2 =findViewById(R.id.buttonl2);
         level1_3 =findViewById(R.id.buttonl3);
@@ -45,18 +48,83 @@ public class MapActivity extends BaseActivity {
         inventoryb = findViewById(R.id.button2);
 
 
-        level1_2.setClickable(false);
-        level1_3.setClickable(false);
-        level1_4.setClickable(false);
-        level1_5.setClickable(false);
-        level1_6.setClickable(false);
-        level1_7.setClickable(false);
-        level1_8.setClickable(false);
-        level1_9.setClickable(false);
-        level1_10.setClickable(false);
-        if(fogofWarLogistic.getLevelsStorageInfo(2)==1){
-            level1_2.setClickable(true);
+        level1_2.setEnabled(false);
+        level1_3.setEnabled(false);
+        level1_4.setEnabled(false);
+        level1_5.setEnabled(false);
+        level1_6.setEnabled(false);
+        level1_7.setEnabled(false);
+        level1_8.setEnabled(false);
+        level1_9.setEnabled(false);
+        level1_10.setEnabled(false);
+
+
+        if( global.nextLevel==2){
+                level1_2.setEnabled(true);
+                System.out.println("Level 2 Enabled");
         }
+        if( global.nextLevel==3){
+            level1_3.setEnabled(true);
+            System.out.println("Level 3 Enabled");
+        }
+        if( global.nextLevel==4){
+            level1_4.setEnabled(true);
+            System.out.println("Level 4 Enabled");
+        }
+        if( global.nextLevel==5){
+            level1_5.setEnabled(true);
+            System.out.println("Level 5 Enabled");
+        }
+        if( global.nextLevel==6){
+            level1_6.setEnabled(true);
+            System.out.println("Level 6 Enabled");
+        }
+        if( global.nextLevel==7){
+            level1_7.setEnabled(true);
+            System.out.println("Level 7 Enabled");
+        }
+        if( global.nextLevel==8){
+            level1_8.setEnabled(true);
+            System.out.println("Level 8 Enabled");
+        }
+        if( global.nextLevel==9){
+            level1_9.setEnabled(true);
+            System.out.println("Level 9 Enabled");
+        }
+        if( global.nextLevel==10){
+            level1_10.setEnabled(true);
+            System.out.println("Level 10 Enabled");
+        }
+
+        /*
+        if(fogofWarLogistic.getLevelsStorageInfo(3)==1){
+            level1_3.setEnabled(true);
+        }
+        if(fogofWarLogistic.getLevelsStorageInfo(4)==1){
+            level1_4.setEnabled(true);
+        }
+        if(fogofWarLogistic.getLevelsStorageInfo(5)==1){
+            level1_5.setEnabled(true);
+        }
+        if(fogofWarLogistic.getLevelsStorageInfo(5)==1){
+            level1_6.setEnabled(true);
+        }
+        if(fogofWarLogistic.getLevelsStorageInfo(6)==1){
+            level1_7.setEnabled(true);
+        }
+        if(fogofWarLogistic.getLevelsStorageInfo(7)==1){
+            level1_8.setEnabled(true);
+        }
+        if(fogofWarLogistic.getLevelsStorageInfo(8)==1){
+            level1_9.setEnabled(true);
+        }
+        if(fogofWarLogistic.getLevelsStorageInfo(9)==1){
+            level1_10.setEnabled(true);
+        }
+
+
+         */
+
         lavel1_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,6 +135,7 @@ public class MapActivity extends BaseActivity {
 
             }
         });
+
         level1_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

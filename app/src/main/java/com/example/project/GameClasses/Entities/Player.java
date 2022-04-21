@@ -1,11 +1,17 @@
 package com.example.project.GameClasses.Entities;
 
 import static com.example.project.GameClasses.Interface.Global.global;
+import static com.example.project.GameClasses.Levels.LevelThread.playerbitmap;
 
 import android.app.Application;
+import android.content.Context;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.widget.Toast;
 
 import com.example.project.GameClasses.Entities.Enemies.Enemy;
+import com.example.project.GameClasses.Levels.LevelThread;
+import com.example.project.R;
 
 public class Player {
     public int health = 10;
@@ -23,6 +29,7 @@ public class Player {
 
     private int playerX = 300;
     private int playerY = 850;
+
     //public boolean playerIsAttacked;
 
     public int getHealth(Player player) {
@@ -53,6 +60,9 @@ public class Player {
     public Player(){
 
     }
+
+
+
     public void getDamage(int dmg){
         health-=dmg;
 

@@ -26,7 +26,7 @@ public class Slime extends Enemy{
 
 
     public Slime(Context context){
-        eDamage = 6;
+        eDamage = 1;
         eHealth = 10;
 
         //this.update();

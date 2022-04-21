@@ -1,8 +1,8 @@
 package com.example.project.GameClasses.Interface;
 
-import static com.example.project.GameClasses.Interface.Global.BOOKKEY;
+
 import static com.example.project.GameClasses.Interface.Global.IMGKEY;
-import static com.example.project.GameClasses.Interface.Global.PRICEKEY;
+
 import static com.example.project.GameClasses.Interface.Global.global;
 import static com.example.project.GameClasses.Interface.Global.randomize;
 
@@ -25,7 +25,7 @@ import java.util.Random;
 
 public class ResultActivity extends BaseActivity {
 
-    Button rerunButton;
+
     Button continueButton;
     TextView resultText;
     ImageView itemYouGot;
@@ -41,7 +41,7 @@ public class ResultActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result);
         itemYouGot =findViewById(R.id.item_you_got);
-        rerunButton = findViewById(R.id.rerun_but);
+
         continueButton = findViewById(R.id.continue_but);
         resultText =findViewById(R.id.result_text);
         intent=getIntent();
@@ -49,14 +49,62 @@ public class ResultActivity extends BaseActivity {
         chance = arguments.getInt("rI");
 
 
-        if( chance< 50){
+        if( chance==1){
             itemYouGot.setImageResource(R.drawable.treestick);
-            System.out.println("asdqwdqseqqeqeqweqeq");
+
            // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
-        }else if( chance >= 50){
+        }else if( chance ==2){
+            itemYouGot.setImageResource(R.drawable.pan);
+
+           // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
+        }else if( chance ==3 ){
+            itemYouGot.setImageResource(R.drawable.slimesword);
+
+            // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
+        }else if( chance ==4){
+            itemYouGot.setImageResource(R.drawable.obsidiansword);
+
+            // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
+        }else if( chance ==5){
+            itemYouGot.setImageResource(R.drawable.crimsonscythe);
+
+            // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
+        }else if( chance ==6){
+            itemYouGot.setImageResource(R.drawable.ironarmor);
+
+            // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
+        }else if( chance ==7){
+            itemYouGot.setImageResource(R.drawable.goldenarmor);
+
+            // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
+        }else if( chance ==8){
+            itemYouGot.setImageResource(R.drawable.slimearmor);
+
+            // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
+        }else if( chance ==9){
+            itemYouGot.setImageResource(R.drawable.shield);
+
+            // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
+        }else if( chance ==10){
+            itemYouGot.setImageResource(R.drawable.rubinring);
+
+            // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
+        }else if( chance ==11){
+            itemYouGot.setImageResource(R.drawable.ametistring);
+
+            // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
+        }else if( chance ==12){
+            itemYouGot.setImageResource(R.drawable.darkring);
+
+            // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
+        }else if( chance ==13){
+            itemYouGot.setImageResource(R.drawable.emeraldring);
+
+            // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
+        }else if( chance ==14){
             itemYouGot.setImageResource(R.drawable.darkwizardsuit);
-            System.out.println("asdqwdqseqqeqeqweadsdqsadqsdqsdqdqeqeqeq");
-           // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
+
+            // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
         }
 
 
@@ -64,14 +112,7 @@ public class ResultActivity extends BaseActivity {
 
 
 
-        rerunButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ResultActivity.this, LevelMainActivity.class));
 
-                ResultActivity.this.finish();
-            }
-        });
 
 
 

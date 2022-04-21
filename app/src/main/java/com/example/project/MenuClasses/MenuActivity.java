@@ -6,8 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.project.GameClasses.GameBackend.MyService;
 import com.example.project.MenuClasses.MapActivity;
-import com.example.project.GameClasses.MyService;
+
 import com.example.project.R;
 
 public class MenuActivity extends BaseActivity {

@@ -17,13 +17,109 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/nlbg"
+            android:layout_width="80dp"
+            android:layout_height="81dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="26dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/rbg"
+            android:layout_width="82dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toEndOf="@+id/hbg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/pbg"
+            android:layout_width="76dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="57dp"
+            app:layout_constraintStart_toEndOf="@+id/bbg"
+            app:layout_constraintTop_toBottomOf="@+id/wbg"
+            app:srcCompat="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/bbg"
+            android:layout_width="79dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="57dp"
+            app:layout_constraintStart_toEndOf="@+id/abg"
+            app:layout_constraintTop_toBottomOf="@+id/arbg"
+            app:srcCompat="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/abg"
+            android:layout_width="84dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="74dp"
+            android:layout_marginTop="57dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sbg"
+            app:srcCompat="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/sbg"
+            android:layout_width="84dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="74dp"
+            android:layout_marginTop="58dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nlbg"
+            app:srcCompat="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/arbg"
+            android:layout_width="84dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="57dp"
+            app:layout_constraintStart_toEndOf="@+id/sbg"
+            app:layout_constraintTop_toBottomOf="@+id/hbg"
+            app:srcCompat="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/wbg"
+            android:layout_width="84dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="61dp"
+            app:layout_constraintStart_toEndOf="@+id/arbg"
+            app:layout_constraintTop_toBottomOf="@+id/rbg"
+            app:srcCompat="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/hbg"
+            android:layout_width="86dp"
+            android:layout_height="84dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toEndOf="@+id/nlbg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:color/darker_gray" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <ListView
             android:id="@+id/inventory_list"
             android:layout_width="256dp"
             android:layout_height="406dp"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="432dp"
             android:layout_marginTop="1dp"
-            app:layout_constraintStart_toEndOf="@+id/weapon"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
 
@@ -44,83 +140,86 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/ring"
+            android:layout_width="75dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="53dp"
+            app:layout_constraintEnd_toStartOf="@+id/inventory_list"
+            app:layout_constraintStart_toEndOf="@+id/helmet"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
             android:id="@+id/body_img"
-            android:layout_width="106dp"
-            android:layout_height="102dp"
-            android:layout_marginStart="176dp"
-            android:layout_marginTop="152dp"
+            android:layout_width="76dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="188dp"
+            android:layout_marginTop="168dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/weapon"
-            android:layout_width="106dp"
-            android:layout_height="102dp"
-            android:layout_marginStart="296dp"
-            android:layout_marginTop="156dp"
+            android:layout_width="76dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="172dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.462"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/neck_chain"
-            android:layout_width="106dp"
-            android:layout_height="102dp"
-            android:layout_marginStart="68dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="72dp"
+            android:layout_height="71dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="32dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/shield"
-            android:layout_width="106dp"
-            android:layout_height="102dp"
-            android:layout_marginStart="68dp"
-            android:layout_marginTop="156dp"
+            android:layout_width="75dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="168dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/helmet"
-            android:layout_width="106dp"
-            android:layout_height="102dp"
-            android:layout_marginStart="184dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/ring"
-            android:layout_width="106dp"
-            android:layout_height="102dp"
-            android:layout_marginStart="296dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="76dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="188dp"
+            android:layout_marginTop="28dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/boots"
-            android:layout_width="106dp"
-            android:layout_height="102dp"
-            android:layout_marginStart="184dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="81dp"
+            android:layout_height="81dp"
+            android:layout_marginStart="188dp"
+            android:layout_marginTop="300dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/body_img" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/pet"
-            android:layout_width="97dp"
-            android:layout_height="95dp"
-            android:layout_marginStart="292dp"
-            android:layout_marginTop="296dp"
+            android:layout_width="75dp"
+            android:layout_height="78dp"
+            android:layout_marginStart="304dp"
+            android:layout_marginTop="300dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/aura"
-            android:layout_width="106dp"
-            android:layout_height="102dp"
-            android:layout_marginStart="68dp"
-            android:layout_marginTop="296dp"
+            android:layout_width="77dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="304dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

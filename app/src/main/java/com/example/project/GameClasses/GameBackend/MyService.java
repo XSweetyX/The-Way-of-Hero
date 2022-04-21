@@ -1,4 +1,4 @@
-package com.example.project.GameClasses;
+package com.example.project.GameClasses.GameBackend;
 
 import android.app.Service;
 import android.content.Intent;

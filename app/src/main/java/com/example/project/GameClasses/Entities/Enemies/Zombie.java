@@ -17,7 +17,7 @@ public class Zombie extends Enemy{
         eHealth = 10;
 
 
-        zombieBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.skill1);
+        zombieBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.zombie);
     }
     public void Zupdate(Canvas canvas, Context context) {//Все ресурсы и объекты для рисования брать из Level1l1Tread
         LevelThread.canvas = canvas;//обязательно передать canvas из tread

@@ -1,12 +1,13 @@
 package com.example.project.GameClasses.Interface;
 
 
-import static com.example.project.GameClasses.Interface.Global.BOOKKEY;
+
 import static com.example.project.GameClasses.Interface.Global.IMGKEY;
-import static com.example.project.GameClasses.Interface.Global.PRICEKEY;
+
 import static com.example.project.GameClasses.Interface.Global.global;
 import static com.example.project.GameClasses.Interface.Global.randomize;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.widget.Toast;
 
@@ -38,12 +39,12 @@ public class Items {
      * 2 - helmet
      * 3 - armor
      * 4 - weapon
-     * 5 - gloves
-     * 6 - shoes
+     * 5 - boots
+     * 6 - ring
      * 7 - necklace
      * 8 - shield
-     * 9 - ring
-     * 10 - enchant scroll
+     * 9 - pet
+     * 10 - aura
      */
     public int type;
 
@@ -88,12 +89,12 @@ public class Items {
     public int imgIndex; //R.drawable. ...
 
     //public Items item = new Items();
-    //ошибка!
+
     public Items() {
 
     }
 
-    public Items(String name, String desc, int rarity, int imgIndex, int hp, int armor, int exp, int sell, int index) {
+    public Items( String name, String desc, int rarity, int imgIndex, int hp, int armor, int exp, int sell, int index) {
         this.name = name;
         this.armor = armor;
         this.desc = desc;
@@ -126,17 +127,11 @@ public class Items {
         type = 0;
         labelName = name;
         this.index = index;
-        //this.bitmap = bitmap_;
 
 
     }
 
-    /*
-    public Items(){
 
-    }
-
-     */
     public String getName() {
         return name;
     }
@@ -148,17 +143,11 @@ public class Items {
     public int getImgIndex() {
         return imgIndex;
     }
-    /*
-    public Items getItem(){
-        item.DropItem();
-        return item;
-    }
-
-     */
-    //Переделай bitmap на bitmap image
 
 
-    //public Items[] mainValue = new Items[]{wizardbody1,treestick};//общий массив
+
+
+
 
     public String getDesc() {
         return desc;
