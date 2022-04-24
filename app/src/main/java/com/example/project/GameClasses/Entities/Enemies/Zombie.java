@@ -25,7 +25,7 @@ public class Zombie extends Enemy{
         //System.out.println("Updated");
         if (this.eHealth<=0){
             zombieBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ripstone);
-            canvas.drawBitmap(zombieBitmap,this.getEX(),this.getEY(), LevelThread.backgroundPaint);
+            canvas.drawBitmap(zombieBitmap,this.getEX(),this.getEY()-50, LevelThread.backgroundPaint);
 
         }
         // Never once did draw.

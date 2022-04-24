@@ -93,7 +93,7 @@ public class LevelThread extends Thread{
 
 
         backgroundBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.level11bg);
-        resizedBitmap=Bitmap.createScaledBitmap(backgroundBitmap, 1900, 1300, true);
+        resizedBitmap=Bitmap.createScaledBitmap(backgroundBitmap, 2300, 1300, true);
 
         playerbitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.playernew);
 
@@ -182,17 +182,15 @@ public class LevelThread extends Thread{
 
                         break;
                 }
+
+
+
                 canvas.drawBitmap(playerbitmap,player.getPlayerX(),player.getPlayerY(),backgroundPaint);
-                /*
-                  try{
 
-
-                }catch (Exception e){}
-                 */
 
                 //рисуем картинки  предметов в игре
                 if(global.playerItems.getItemOneBitmap(3)!=null){
-                    canvas.drawBitmap( global.playerItems.getItemOneBitmap(3),player.getPlayerX()+46,player.getPlayerY()+72,backgroundPaint);
+                    canvas.drawBitmap( global.playerItems.getItemOneBitmap(3),player.getPlayerX(),player.getPlayerY(),backgroundPaint);
                 }
                 if(global.playerItems.getItemOneBitmap(4)!=null){
                     canvas.drawBitmap( global.playerItems.getItemOneBitmap(4),player.getPlayerX()+46,player.getPlayerY()+72,backgroundPaint);

@@ -21,7 +21,7 @@ public class Enemy {
     public int eHealth;
     public int eDamage;
     private int eX= 1200;
-    private int eY = 850;
+    private int eY = 650;
 
     public static Bitmap eBitmap = slimeBitmap;
     TextView playerHealthView123;
@@ -38,8 +38,8 @@ public class Enemy {
                 player.getDamage(eDamage);
                 global.attackOrganizer.setPlayerIsAttacking(true);
 
-                // global.levelMainActivity.getHealthView().setText(""+player.health);
-                System.out.println(player.getHealth(player));
+
+
 
 
 

@@ -3,6 +3,8 @@ package com.example.project.MenuClasses;
 import static com.example.project.GameClasses.Interface.Global.global;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +13,7 @@ import com.example.project.GameClasses.Levels.LevelMainActivity;
 import com.example.project.R;
 
 public class MapActivity extends BaseActivity {
+
 
     public static Button lavel1_1 ;
     public static Button level1_2 ;
@@ -30,11 +33,12 @@ public class MapActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map);
 
 
-
+        MediaPlayer mmPlayer = MediaPlayer.create(MapActivity.this, R.raw.mainsound);
         lavel1_1=findViewById(R.id.button3);
         level1_2 =findViewById(R.id.buttonl2);
         level1_3 =findViewById(R.id.buttonl3);
@@ -130,6 +134,7 @@ public class MapActivity extends BaseActivity {
             public void onClick(View view) {
                 global.organizer.setCurrentLevel(1);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
+                mmPlayer.start();
 
                 MapActivity.this.finish();
 
@@ -141,7 +146,7 @@ public class MapActivity extends BaseActivity {
             public void onClick(View v) {
                 global.organizer.setCurrentLevel(2);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
-
+                mmPlayer.start();
                 MapActivity.this.finish();
             }
         });
@@ -150,7 +155,7 @@ public class MapActivity extends BaseActivity {
             public void onClick(View v) {
                 global.organizer.setCurrentLevel(3);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
-
+                mmPlayer.start();
                 MapActivity.this.finish();
             }
         });
@@ -159,7 +164,7 @@ public class MapActivity extends BaseActivity {
             public void onClick(View v) {
                 global.organizer.setCurrentLevel(4);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
-
+                mmPlayer.start();
                 MapActivity.this.finish();
             }
         });
@@ -168,7 +173,7 @@ public class MapActivity extends BaseActivity {
             public void onClick(View v) {
                 global.organizer.setCurrentLevel(5);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
-
+                mmPlayer.start();
                 MapActivity.this.finish();
             }
         });
@@ -177,7 +182,7 @@ public class MapActivity extends BaseActivity {
             public void onClick(View v) {
                 global.organizer.setCurrentLevel(6);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
-
+                mmPlayer.start();
                 MapActivity.this.finish();
             }
         });
@@ -186,7 +191,7 @@ public class MapActivity extends BaseActivity {
             public void onClick(View v) {
                 global.organizer.setCurrentLevel(7);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
-
+                mmPlayer.start();
                 MapActivity.this.finish();
             }
         });
@@ -195,7 +200,7 @@ public class MapActivity extends BaseActivity {
             public void onClick(View v) {
                 global.organizer.setCurrentLevel(8);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
-
+                mmPlayer.start();
                 MapActivity.this.finish();
             }
         });
@@ -204,7 +209,7 @@ public class MapActivity extends BaseActivity {
             public void onClick(View v) {
                 global.organizer.setCurrentLevel(9);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
-
+                mmPlayer.start();
                 MapActivity.this.finish();
             }
         });
@@ -213,7 +218,7 @@ public class MapActivity extends BaseActivity {
             public void onClick(View v) {
                 global.organizer.setCurrentLevel(10);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
-
+                mmPlayer.start();
                 MapActivity.this.finish();
             }
         });
@@ -221,7 +226,7 @@ public class MapActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MapActivity.this, InventoryActivity.class));
-
+                mmPlayer.start();
                 MapActivity.this.finish();
             }
         });

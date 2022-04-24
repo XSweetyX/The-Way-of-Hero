@@ -4,14 +4,20 @@ package com.example.project.MenuClasses;
 import static com.example.project.GameClasses.Interface.Global.BITMAPKEY;
 import static com.example.project.GameClasses.Interface.Global.DESCKEY;
 import static com.example.project.GameClasses.Interface.Global.HPKEY;
+import static com.example.project.GameClasses.Interface.Global.HPKEY1;
 import static com.example.project.GameClasses.Interface.Global.IMGKEY;
 import static com.example.project.GameClasses.Interface.Global.ITEMKEY;
 import static com.example.project.GameClasses.Interface.Global.global;
+import static com.example.project.GameClasses.Interface.Global.health;
+import static com.example.project.GameClasses.Interface.Global.pDamage;
 import static com.example.project.GameClasses.Interface.ItemStorage.hm;
+import static com.example.project.GameClasses.Levels.LevelView.player;
 
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.example.project.GameClasses.Levels.LevelMainActivity;
 import com.example.project.R;
 
 public class InventoryActivity extends BaseActivity {
@@ -29,18 +36,18 @@ public class InventoryActivity extends BaseActivity {
 
 
 
-
+    public static int secondHealth =10;
 
     //private ResultActivity resultActivity = new ResultActivity();
 
 
-
+    public static int intParsed1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inventory);
-
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        MediaPlayer m1Player = MediaPlayer.create(InventoryActivity.this, R.raw.mainsound);
 
         ImageView armorImage = findViewById(R.id.body_img);
         ImageView weaponImage = findViewById(R.id.weapon);
@@ -98,64 +105,74 @@ public class InventoryActivity extends BaseActivity {
         lvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                try{
+                    if(hm.get(DESCKEY)=="1"){
+                        //это зелья :ничего не пиши
+                        // armorImage.setImageResource();
+                        System.out.println("item is equiped");
+                    }
+                    if(hm.get(DESCKEY)=="2"){
+                        hbg.setVisibility(View.VISIBLE);
+                        global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),1);
+                        helmetImage.setImageResource((Integer) hm.get(IMGKEY));
 
-                if(hm.get(DESCKEY)=="1"){
-                    //это зелья :ничего не пиши
-                   // armorImage.setImageResource();
-                    System.out.println("item is equiped");
-                }
-                if(hm.get(DESCKEY)=="2"){
-                    hbg.setVisibility(View.VISIBLE);
-                    global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),1);
-                    armorImage.setImageResource(global.playerItems.getItemOneImage(1));
-                    helmetImage.setImageResource((Integer) hm.get(IMGKEY));
-
-                }
-                if(hm.get(DESCKEY)=="3"){
-                    arbg.setVisibility(View.VISIBLE);
-                    global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),2);
-                    global.playerItems.setPlayerItemsBitmaps((Bitmap) hm.get(BITMAPKEY),2);
-                    armorImage.setImageResource(global.playerItems.getItemOneImage(2));
-                    System.out.println("item is equiped");
+                    }
+                    if(hm.get(DESCKEY)=="3"){
+                        arbg.setVisibility(View.VISIBLE);
+                        global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),2);
+                        global.playerItems.setPlayerItemsBitmaps((Bitmap) hm.get(BITMAPKEY),2);
+                        armorImage.setImageResource(global.playerItems.getItemOneImage(2));
+                        int intParsed1 = Integer.parseInt (String.valueOf(hm.get(HPKEY1)));
+                        health=intParsed1;
+                        secondHealth =health;
 
 
-                }
-                if(hm.get(DESCKEY)=="4"){
-                    wbg.setVisibility(View.VISIBLE);
-                    global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),3);//в хранилище предметов в ячейках инвентаря
-                    global.playerItems.setPlayerItemsBitmaps((Bitmap) hm.get(BITMAPKEY),3);//в хранилище предметов для отображения на уровне
-                    weaponImage.setImageResource(global.playerItems.getItemOneImage(3));
-                }
-                if(hm.get(DESCKEY)=="5"){
-                    bbg.setVisibility(View.VISIBLE);
-                    global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),4);
-                    bootsImage.setImageResource(global.playerItems.getItemOneImage(5));
-                }
-                if(hm.get(DESCKEY)=="6"){
-                    rbg.setVisibility(View.VISIBLE);
-                    global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),5);
-                    ringImage.setImageResource(global.playerItems.getItemOneImage(3));
-                }
-                if(hm.get(DESCKEY)=="7"){
-                    nlbg.setVisibility(View.VISIBLE);
-                    global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),6);
-                    necklaceImage.setImageResource(global.playerItems.getItemOneImage(7));
-                }
-                if(hm.get(DESCKEY)=="8"){
-                    sbg.setVisibility(View.VISIBLE);
-                    global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),7);
-                    shieldImage.setImageResource(global.playerItems.getItemOneImage(3));
-                }
-                if(hm.get(DESCKEY)=="9"){
-                    pbg.setVisibility(View.VISIBLE);
-                    global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),8);
-                    petImage.setImageResource(global.playerItems.getItemOneImage(3));
-                }
-                if(hm.get(DESCKEY)=="10"){
-                    abg.setVisibility(View.VISIBLE);
-                    global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),0);
-                    auraImage.setImageResource(global.playerItems.getItemOneImage(0));
-                }
+
+                    }
+                    if(hm.get(DESCKEY)=="4"){
+                        wbg.setVisibility(View.VISIBLE);
+                        global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),3);//в хранилище предметов в ячейках инвентаря
+                        global.playerItems.setPlayerItemsBitmaps((Bitmap) hm.get(BITMAPKEY),3);//в хранилище предметов для отображения на уровне
+                        weaponImage.setImageResource(global.playerItems.getItemOneImage(3));
+                        int intParsed2 = Integer.parseInt (String.valueOf(hm.get(HPKEY1)));
+                        pDamage=intParsed2;
+
+
+
+                    }
+                    if(hm.get(DESCKEY)=="5"){
+                        bbg.setVisibility(View.VISIBLE);
+                        global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),4);
+                        bootsImage.setImageResource(global.playerItems.getItemOneImage(5));
+                    }
+                    if(hm.get(DESCKEY)=="6"){
+                        rbg.setVisibility(View.VISIBLE);
+                        global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),5);
+                        ringImage.setImageResource(global.playerItems.getItemOneImage(3));
+                    }
+                    if(hm.get(DESCKEY)=="7"){
+                        nlbg.setVisibility(View.VISIBLE);
+                        global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),6);
+                        necklaceImage.setImageResource(global.playerItems.getItemOneImage(7));
+                    }
+                    if(hm.get(DESCKEY)=="8"){
+                        sbg.setVisibility(View.VISIBLE);
+                        global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),7);
+                        shieldImage.setImageResource(global.playerItems.getItemOneImage(3));
+                    }
+                    if(hm.get(DESCKEY)=="9"){
+                        pbg.setVisibility(View.VISIBLE);
+                        global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),8);
+                        petImage.setImageResource(global.playerItems.getItemOneImage(3));
+                    }
+                    if(hm.get(DESCKEY)=="10"){
+                        abg.setVisibility(View.VISIBLE);
+                        global.playerItems.setPlayerItemsImages((int) hm.get(IMGKEY),0);
+                        auraImage.setImageResource(global.playerItems.getItemOneImage(0));
+                    }
+                }catch (NullPointerException e){}
+                m1Player.start();
+
             }
         });
         //global.playerItems.loadItems(hm);
@@ -174,6 +191,7 @@ public class InventoryActivity extends BaseActivity {
         eskInventoryBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                m1Player.start();
                 startActivity(new Intent(InventoryActivity.this, MapActivity.class));
                 InventoryActivity.this.onPause();
             }

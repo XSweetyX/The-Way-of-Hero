@@ -25,7 +25,7 @@ public class Ghost extends Enemy{
         //System.out.println("Updated");
         if (this.eHealth<=0){
             ghostBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ripstone);
-            canvas.drawBitmap(ghostBitmap,this.getEX(),this.getEY(), LevelThread.backgroundPaint);
+            canvas.drawBitmap(ghostBitmap,this.getEX(),this.getEY()-50, LevelThread.backgroundPaint);
 
         }
         // Never once did draw.

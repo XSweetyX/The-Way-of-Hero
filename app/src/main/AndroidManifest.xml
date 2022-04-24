@@ -4,7 +4,7 @@
 
     <application
         android:name=".GameClasses.GameBackend.YourApplication"
-        android:screenOrientation="landscape"
+        android:screenOrientation = "landscape"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/splash"
@@ -12,7 +12,9 @@
         android:supportsRtl="true">
 
 
+
         <activity
+            android:screenOrientation = "landscape"
             android:name=".MenuClasses.BaseActivity"
             android:exported="true">
             <intent-filter>
@@ -22,56 +24,67 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation = "landscape"
             android:name=".MenuClasses.SplashActivity"
             android:exported="true"
             android:theme="@style/MyTheme">
         </activity>
         <activity
+            android:screenOrientation = "landscape"
             android:name=".MenuClasses.MapActivity"
             android:exported="true"
             android:theme="@style/MyTheme">
         </activity>
         <activity
+            android:screenOrientation = "landscape"
             android:name=".MenuClasses.InventoryActivity"
             android:exported="true"
             android:theme="@style/MyTheme">
         </activity>
         <activity
+            android:screenOrientation = "landscape"
             android:name=".GameClasses.Interface.ScoresActivity"
             android:exported="true"
             android:theme="@style/MyTheme">
         </activity>
         <activity
+            android:screenOrientation = "landscape"
             android:name=".MenuClasses.SettingActivity"
             android:exported="true"
             android:theme="@style/MyTheme">
         </activity>
         <activity
+            android:screenOrientation = "landscape"
             android:name=".MenuClasses.MenuActivity"
             android:exported="true"
             android:theme="@style/MyTheme">
         </activity>
         <activity
+            android:screenOrientation = "landscape"
             android:name=".MenuClasses.LoseActivity"
             android:exported="true"
             android:theme="@style/MyTheme">
         </activity>
         <activity
+            android:screenOrientation = "landscape"
             android:name=".MenuClasses.HelpActivity"
             android:exported="true"
             android:theme="@style/MyTheme">
         </activity>
         <activity
+            android:screenOrientation = "landscape"
             android:name=".GameClasses.Interface.GameActivity"
             android:exported="true"
             android:theme="@style/MyTheme">
         </activity>
         <activity
+            android:screenOrientation = "landscape"
             android:name=".GameClasses.Interface.ResultActivity"
             android:exported="true"
             android:theme="@style/MyTheme">
         </activity>
         <activity
+            android:screenOrientation = "landscape"
             android:name=".GameClasses.Levels.LevelMainActivity"
             android:exported="true"
             android:theme="@style/MyTheme">

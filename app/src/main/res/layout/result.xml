@@ -9,6 +9,7 @@
         android:id="@+id/result_text"
         android:layout_width="328dp"
         android:layout_height="100dp"
+        android:text="YOU WON"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

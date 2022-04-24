@@ -1,6 +1,8 @@
 package com.example.project.MenuClasses;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,14 +19,15 @@ public class LoseActivity extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lose);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        MediaPlayer mmPlayer = MediaPlayer.create(LoseActivity.this, R.raw.mainsound);
         continuelbut = findViewById(R.id.continue_lose_but);
 
         continuelbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoseActivity.this, MapActivity.class));
-
+                mmPlayer.start();
                 LoseActivity.this.finish();
             }
         });

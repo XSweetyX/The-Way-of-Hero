@@ -25,7 +25,7 @@ public class StrangeCat extends Enemy{
         //System.out.println("Updated");
         if (this.eHealth<=0){
             strangeCatBitamp = BitmapFactory.decodeResource(context.getResources(), R.drawable.ripstone);
-            canvas.drawBitmap(strangeCatBitamp,this.getEX(),this.getEY(), LevelThread.backgroundPaint);
+            canvas.drawBitmap(strangeCatBitamp,this.getEX(),this.getEY()-50, LevelThread.backgroundPaint);
 
         }
         // Never once did draw.

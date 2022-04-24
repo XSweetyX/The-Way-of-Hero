@@ -24,11 +24,16 @@ public class Global {
     public static boolean randomize = false;
     public static final String ITEMKEY = "itemname";    // Главное название, большими буквами
     public static final String HPKEY = "itemhp";  // Наименование, то что ниже главного
+    public static final String HPKEY1 = "itemhp1";  // Наименование, то что ниже главного
     public static final String IMGKEY = "iconfromraw";  //Наша будущая картинка
     public static final String DESCKEY ="itemdesc" ;//тип предмета
     public static final String BITMAPKEY ="itembitmap" ;//bitmap предмета
     public ItemStorage itemStorage = new ItemStorage();
     public Organizer organizer = new Organizer();
+    public static int health = 10;
+
+    public static int pDamage =3;
+    public static int AbilityPoints = 3;
 
 
     //public LevelMainActivity levelMainActivity = new LevelMainActivity();

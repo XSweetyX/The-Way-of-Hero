@@ -25,7 +25,7 @@ public class Dragon extends Enemy{
         //System.out.println("Updated");
         if (this.eHealth<=0){
             dragonBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ripstone);
-            canvas.drawBitmap(dragonBitmap,this.getEX(),this.getEY(), LevelThread.backgroundPaint);
+            canvas.drawBitmap(dragonBitmap,2150,this.getEY()-50, LevelThread.backgroundPaint);
 
         }
         // Never once did draw.

@@ -41,7 +41,7 @@ public class Slime extends Enemy{
         //System.out.println("Updated");
         if (this.eHealth<=0){
             slimeBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ripstone);
-            canvas.drawBitmap(slimeBitmap,this.getEX(),this.getEY(), LevelThread.backgroundPaint);
+            canvas.drawBitmap(slimeBitmap,this.getEX(),650, LevelThread.backgroundPaint);
 
         }
         // Never once did draw.

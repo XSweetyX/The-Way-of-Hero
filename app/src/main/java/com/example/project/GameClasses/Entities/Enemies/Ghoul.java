@@ -25,7 +25,7 @@ public class Ghoul extends Enemy{
         //System.out.println("Updated");
         if (this.eHealth<=0){
             ghoulBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ripstone);
-            canvas.drawBitmap(ghoulBitmap,this.getEX(),this.getEY(), LevelThread.backgroundPaint);
+            canvas.drawBitmap(ghoulBitmap,this.getEX(),this.getEY()-50, LevelThread.backgroundPaint);
 
         }
         // Never once did draw.

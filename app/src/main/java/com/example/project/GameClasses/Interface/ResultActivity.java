@@ -7,6 +7,7 @@ import static com.example.project.GameClasses.Interface.Global.global;
 import static com.example.project.GameClasses.Interface.Global.randomize;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +41,7 @@ public class ResultActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         itemYouGot =findViewById(R.id.item_you_got);
 
         continueButton = findViewById(R.id.continue_but);
@@ -82,7 +84,8 @@ public class ResultActivity extends BaseActivity {
 
             // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
         }else if( chance ==9){
-            itemYouGot.setImageResource(R.drawable.shield);
+            itemYouGot.setImageResource(R.drawable.darkwizardsuit);
+
 
             // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
         }else if( chance ==10){
@@ -102,7 +105,7 @@ public class ResultActivity extends BaseActivity {
 
             // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
         }else if( chance ==14){
-            itemYouGot.setImageResource(R.drawable.darkwizardsuit);
+            itemYouGot.setImageResource(R.drawable.shield);
 
             // Toast.makeText(getApplicationContext(), "Chance : "+ global.ResultStore, Toast.LENGTH_SHORT).show();
         }

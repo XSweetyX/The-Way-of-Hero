@@ -25,7 +25,7 @@ public class СursedMage extends Enemy{
         //System.out.println("Updated");
         if (this.eHealth<=0){
             cursedMageBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ripstone);
-            canvas.drawBitmap(cursedMageBitmap,this.getEX(),this.getEY(), LevelThread.backgroundPaint);
+            canvas.drawBitmap(cursedMageBitmap,this.getEX(),this.getEY()-250, LevelThread.backgroundPaint);
 
         }
         // Never once did draw.
