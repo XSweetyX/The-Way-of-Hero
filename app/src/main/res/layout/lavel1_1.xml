@@ -74,6 +74,21 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.988" />
 
+            <TextView
+                android:id="@+id/enemy_hp_view"
+                android:layout_width="95dp"
+                android:layout_height="73dp"
+                android:fontFamily="@font/f1"
+                android:textAlignment="center"
+                android:textColor="#AC2A2A"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.693"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.458" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 

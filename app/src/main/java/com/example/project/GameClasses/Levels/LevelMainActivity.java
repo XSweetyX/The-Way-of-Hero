@@ -47,6 +47,7 @@ public class LevelMainActivity extends BaseActivity {
     int max = 9;
     int diff = max - min;
     TextView playerHealthView;
+    TextView enemyHealthView;
     Random random = new Random();
     int randint;
 
@@ -96,11 +97,13 @@ public class LevelMainActivity extends BaseActivity {
         MediaPlayer m9Player = MediaPlayer.create(LevelMainActivity.this, R.raw.dragontheme);
         MediaPlayer m10Player = MediaPlayer.create(LevelMainActivity.this, R.raw.demontheme);
         playerHealthView = findViewById(R.id.textView2);
+        enemyHealthView = findViewById(R.id.enemy_hp_view);
         Button skill1 = findViewById(R.id.skill1);
         Button skill2 = findViewById(R.id.skill2);
         Button skill3 = findViewById(R.id.skill3);
 
         health = secondHealth;
+
 
         playerHealthView.setText(""+secondHealth);
         switch (global.organizer.getCurrentlevel()) {
@@ -163,7 +166,11 @@ public class LevelMainActivity extends BaseActivity {
 
                 switch (global.organizer.getCurrentlevel()){
                     case 1:
+                        enemyHealthView.setText(""+slime.getEHealth(slime));
+
                         player.AttackEnemy(slime);
+                        enemyHealthView.setText(""+slime.getEHealth(slime));
+
                         mhPlayer.start();
                         Handler handler1_1 = new Handler();
                         handler1_1.postDelayed(new Runnable() {
@@ -197,7 +204,10 @@ public class LevelMainActivity extends BaseActivity {
 
                         break;
                     case 2:
+                        enemyHealthView.setText(""+zombie.getEHealth(zombie));
+
                         player.AttackEnemy(zombie);
+                        enemyHealthView.setText(""+zombie.getEHealth(zombie));
                         mhPlayer.start();
                         Handler handler1 = new Handler();
                         handler1.postDelayed(new Runnable() {
@@ -225,7 +235,10 @@ public class LevelMainActivity extends BaseActivity {
                         }
                         break;
                     case 3:
+                        enemyHealthView.setText(""+dummy.getEHealth(dummy));
                         player.AttackEnemy(dummy);
+                        enemyHealthView.setText(""+dummy.getEHealth(dummy));
+
                         mhPlayer.start();
                         Handler handler2 = new Handler();
                         handler2.postDelayed(new Runnable() {
@@ -253,7 +266,10 @@ public class LevelMainActivity extends BaseActivity {
                         }
                         break;
                     case 4:
+                        enemyHealthView.setText(""+strangeCat.getEHealth(strangeCat));
+
                         player.AttackEnemy(strangeCat);
+                        enemyHealthView.setText(""+strangeCat.getEHealth(strangeCat));
                         mhPlayer.start();
                         Handler handler3= new Handler();
                         handler3.postDelayed(new Runnable() {
@@ -280,7 +296,9 @@ public class LevelMainActivity extends BaseActivity {
                         }
                         break;
                     case 5:
+                        enemyHealthView.setText(""+megaDog.getEHealth(megaDog));
                         player.AttackEnemy(megaDog);
+                        enemyHealthView.setText(""+megaDog.getEHealth(megaDog));
                         mhPlayer.start();
                         Handler handler4= new Handler();
                         handler4.postDelayed(new Runnable() {
@@ -308,7 +326,9 @@ public class LevelMainActivity extends BaseActivity {
                         }
                         break;
                     case 6:
+                        enemyHealthView.setText(""+ghost.getEHealth(ghost));
                         player.AttackEnemy(ghost);
+                        enemyHealthView.setText(""+ghost.getEHealth(ghost));
                         mhPlayer.start();
                         Handler handler5= new Handler();
                         handler5.postDelayed(new Runnable() {
@@ -335,7 +355,9 @@ public class LevelMainActivity extends BaseActivity {
                         }
                         break;
                     case 7:
+                        enemyHealthView.setText(""+ghoul.getEHealth(ghoul));
                         player.AttackEnemy(ghoul);
+                        enemyHealthView.setText(""+ghoul.getEHealth(ghoul));
                         mhPlayer.start();
                         Handler handler6= new Handler();
                         handler6.postDelayed(new Runnable() {
@@ -363,7 +385,9 @@ public class LevelMainActivity extends BaseActivity {
                         }
                         break;
                     case 8:
+                        enemyHealthView.setText(""+сursedMage.getEHealth(сursedMage));
                         player.AttackEnemy(сursedMage);
+                        enemyHealthView.setText(""+сursedMage.getEHealth(сursedMage));
                         mhPlayer.start();
                         Handler handler7= new Handler();
                         handler7.postDelayed(new Runnable() {
@@ -392,7 +416,9 @@ public class LevelMainActivity extends BaseActivity {
 
                         break;
                     case 9:
+                        enemyHealthView.setText(""+dragon.getEHealth(dragon));
                         player.AttackEnemy(dragon);
+                        enemyHealthView.setText(""+dragon.getEHealth(dragon));
                         mhPlayer.start();
                         Handler handler8= new Handler();
                         handler8.postDelayed(new Runnable() {
@@ -421,7 +447,9 @@ public class LevelMainActivity extends BaseActivity {
 
                         break;
                     case 10:
+                        enemyHealthView.setText(""+demon.getEHealth(demon));
                         player.AttackEnemy(demon);
+                        enemyHealthView.setText(""+demon.getEHealth(demon));
                         mhPlayer.start();
                         Handler handler9= new Handler();
                         handler9.postDelayed(new Runnable() {
