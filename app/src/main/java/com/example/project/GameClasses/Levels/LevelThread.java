@@ -187,7 +187,7 @@ public class LevelThread extends Thread{
 
                 canvas.drawBitmap(playerbitmap,player.getPlayerX(),player.getPlayerY(),backgroundPaint);
 
-
+                /*
                 //рисуем картинки  предметов в игре
                 if(global.playerItems.getItemOneBitmap(3)!=null){
                     canvas.drawBitmap( global.playerItems.getItemOneBitmap(3),player.getPlayerX(),player.getPlayerY(),backgroundPaint);
@@ -199,6 +199,8 @@ public class LevelThread extends Thread{
                     canvas.drawBitmap( global.playerItems.getItemOneBitmap(8),player.getPlayerX()+46,player.getPlayerY()+72,backgroundPaint);
                 }
 
+
+                 */
 
 
             }finally {

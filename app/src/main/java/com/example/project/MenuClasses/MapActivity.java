@@ -26,10 +26,11 @@ public class MapActivity extends BaseActivity {
     public static Button level1_9 ;
     public static Button level1_10 ;
     Button inventoryb;
+    Button toMenuBut;
     Intent intent;
     Bundle arguments1;
 
-    //public static int number = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,17 +51,17 @@ public class MapActivity extends BaseActivity {
         level1_9 =findViewById(R.id.buttonl9);
         level1_10 =findViewById(R.id.buttonl10);
         inventoryb = findViewById(R.id.button2);
-
+        toMenuBut = findViewById(R.id.to_menu_but);
 
         level1_2.setEnabled(false);
         level1_3.setEnabled(false);
         level1_4.setEnabled(false);
         level1_5.setEnabled(false);
-        level1_6.setEnabled(false);
-        level1_7.setEnabled(false);
-        level1_8.setEnabled(false);
-        level1_9.setEnabled(false);
-        level1_10.setEnabled(false);
+        //level1_6.setEnabled(false);
+        //level1_7.setEnabled(false);
+        //level1_8.setEnabled(false);
+        //level1_9.setEnabled(false);
+        //level1_10.setEnabled(false);
 
 
         if( global.nextLevel==2){
@@ -100,34 +101,7 @@ public class MapActivity extends BaseActivity {
             System.out.println("Level 10 Enabled");
         }
 
-        /*
-        if(fogofWarLogistic.getLevelsStorageInfo(3)==1){
-            level1_3.setEnabled(true);
-        }
-        if(fogofWarLogistic.getLevelsStorageInfo(4)==1){
-            level1_4.setEnabled(true);
-        }
-        if(fogofWarLogistic.getLevelsStorageInfo(5)==1){
-            level1_5.setEnabled(true);
-        }
-        if(fogofWarLogistic.getLevelsStorageInfo(5)==1){
-            level1_6.setEnabled(true);
-        }
-        if(fogofWarLogistic.getLevelsStorageInfo(6)==1){
-            level1_7.setEnabled(true);
-        }
-        if(fogofWarLogistic.getLevelsStorageInfo(7)==1){
-            level1_8.setEnabled(true);
-        }
-        if(fogofWarLogistic.getLevelsStorageInfo(8)==1){
-            level1_9.setEnabled(true);
-        }
-        if(fogofWarLogistic.getLevelsStorageInfo(9)==1){
-            level1_10.setEnabled(true);
-        }
 
-
-         */
 
         lavel1_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,6 +121,7 @@ public class MapActivity extends BaseActivity {
                 global.organizer.setCurrentLevel(2);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
                 mmPlayer.start();
+
                 MapActivity.this.finish();
             }
         });
@@ -156,6 +131,7 @@ public class MapActivity extends BaseActivity {
                 global.organizer.setCurrentLevel(3);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
                 mmPlayer.start();
+
                 MapActivity.this.finish();
             }
         });
@@ -165,6 +141,7 @@ public class MapActivity extends BaseActivity {
                 global.organizer.setCurrentLevel(4);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
                 mmPlayer.start();
+
                 MapActivity.this.finish();
             }
         });
@@ -174,6 +151,7 @@ public class MapActivity extends BaseActivity {
                 global.organizer.setCurrentLevel(5);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
                 mmPlayer.start();
+
                 MapActivity.this.finish();
             }
         });
@@ -183,6 +161,7 @@ public class MapActivity extends BaseActivity {
                 global.organizer.setCurrentLevel(6);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
                 mmPlayer.start();
+
                 MapActivity.this.finish();
             }
         });
@@ -192,6 +171,7 @@ public class MapActivity extends BaseActivity {
                 global.organizer.setCurrentLevel(7);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
                 mmPlayer.start();
+
                 MapActivity.this.finish();
             }
         });
@@ -201,6 +181,7 @@ public class MapActivity extends BaseActivity {
                 global.organizer.setCurrentLevel(8);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
                 mmPlayer.start();
+
                 MapActivity.this.finish();
             }
         });
@@ -210,6 +191,7 @@ public class MapActivity extends BaseActivity {
                 global.organizer.setCurrentLevel(9);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
                 mmPlayer.start();
+
                 MapActivity.this.finish();
             }
         });
@@ -219,6 +201,7 @@ public class MapActivity extends BaseActivity {
                 global.organizer.setCurrentLevel(10);
                 startActivity(new Intent(MapActivity.this, LevelMainActivity.class));
                 mmPlayer.start();
+
                 MapActivity.this.finish();
             }
         });
@@ -227,10 +210,19 @@ public class MapActivity extends BaseActivity {
             public void onClick(View view) {
                 startActivity(new Intent(MapActivity.this, InventoryActivity.class));
                 mmPlayer.start();
+                global.flag=false;
                 MapActivity.this.finish();
             }
         });
+        toMenuBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MapActivity.this, MenuActivity.class));
+                mmPlayer.start();
 
+                MapActivity.this.finish();
+            }
+        });
     }
 
 

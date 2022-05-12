@@ -31,7 +31,7 @@ public class Player {
     public int getPlayerY() {
         return playerY;
     }
-
+    public static int  X2damage =pDamage*2;
     private int playerX = 300;
     private int playerY = 650;
 
@@ -50,6 +50,16 @@ public class Player {
 
 
             this.PDefend();
+
+    }
+    public void AttackEnemyX2(Enemy enemy){
+
+        enemy.getDamage(X2damage);
+
+
+
+
+        this.PDefend();
 
     }
     public void PDefend(){

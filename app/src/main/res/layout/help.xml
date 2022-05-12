@@ -9,16 +9,34 @@
     android:background="@color/white"
     tools:context=".MenuClasses.SplashActivity" >
 
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="723dp"
+
+        android:layout_height="411dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleX="1.7"
+        android:scaleY="1"
+        android:src="@drawable/winbg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="636dp"
         android:layout_height="272dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="48dp"
+        android:fontFamily="@font/f1"
         android:text="Coming Soon"
         android:textSize="96sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.532" />
 
     <Button
         android:id="@+id/helpEscapeBut"
@@ -26,6 +44,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
         android:layout_marginEnd="14dp"
+        android:backgroundTint="#ECE6B3"
+        android:fontFamily="@font/f1"
         android:text="X"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

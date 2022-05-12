@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Global {
+
+    public boolean flag=true;
     public Slime slime;
     public  Zombie zombie;
     public  StrangeCat strangeCat;
@@ -33,7 +35,7 @@ public class Global {
     public static int health = 10;
 
     public static int pDamage =3;
-    public static int AbilityPoints = 3;
+    public static int AbilityPoints = 1;
 
 
     //public LevelMainActivity levelMainActivity = new LevelMainActivity();

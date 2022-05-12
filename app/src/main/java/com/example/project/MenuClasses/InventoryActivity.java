@@ -135,7 +135,7 @@ public class InventoryActivity extends BaseActivity {
                         global.playerItems.setPlayerItemsBitmaps((Bitmap) hm.get(BITMAPKEY),3);//в хранилище предметов для отображения на уровне
                         weaponImage.setImageResource(global.playerItems.getItemOneImage(3));
                         int intParsed2 = Integer.parseInt (String.valueOf(hm.get(HPKEY1)));
-                        pDamage=intParsed2;
+                        pDamage+=intParsed2;
 
 
 

@@ -126,6 +126,7 @@ public class ResultActivity extends BaseActivity {
                 startActivity(new Intent(ResultActivity.this, MapActivity.class));
 
                 ResultActivity.this.finish();
+                global.flag=true;
             }
         });
 

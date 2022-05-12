@@ -1,5 +1,7 @@
 package com.example.project.MenuClasses;
 
+import static com.example.project.GameClasses.Interface.Global.global;
+
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
@@ -28,6 +30,7 @@ public class LoseActivity extends BaseActivity{
             public void onClick(View v) {
                 startActivity(new Intent(LoseActivity.this, MapActivity.class));
                 mmPlayer.start();
+                global.flag=true;
                 LoseActivity.this.finish();
             }
         });

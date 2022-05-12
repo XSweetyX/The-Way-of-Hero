@@ -1,6 +1,9 @@
 package com.example.project.GameClasses.Levels;
 
+import static com.example.project.GameClasses.Entities.Player.X2damage;
+import static com.example.project.GameClasses.Interface.Global.AbilityPoints;
 import static com.example.project.GameClasses.Interface.Global.global;
+import static com.example.project.GameClasses.Interface.Global.pDamage;
 import static com.example.project.GameClasses.Levels.LevelView.demon;
 import static com.example.project.GameClasses.Levels.LevelView.dragon;
 import static com.example.project.GameClasses.Levels.LevelView.dummy;
@@ -17,6 +20,7 @@ import static com.example.project.GameClasses.Levels.LevelView.сursedMage;
 import static com.example.project.GameClasses.Interface.Global.health;
 import static com.example.project.MenuClasses.InventoryActivity.secondHealth;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
@@ -24,8 +28,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.core.content.ContextCompat;
 
 import com.example.project.GameClasses.GameBackend.MyService;
 import com.example.project.GameClasses.GameBackend.ZombieThemeSound;
@@ -46,13 +53,16 @@ public class LevelMainActivity extends BaseActivity {
     int min = 1;
     int max = 9;
     int diff = max - min;
+
     TextView playerHealthView;
     TextView enemyHealthView;
+    TextView enemyDamageTakenView;
     Random random = new Random();
     int randint;
 
     public void takeLose(){
         mlPlayer.start();
+        AbilityPoints=1;
         objectLevelThread.setRunning(false);
         startActivity(new Intent(LevelMainActivity.this, LoseActivity.class));
         secondHealth =health;
@@ -60,6 +70,7 @@ public class LevelMainActivity extends BaseActivity {
     }
     public void takeVictory(){
         mwPlayer.start();
+        AbilityPoints=1;
         randomize =true;
         Toast.makeText(getApplicationContext(), "You Won", Toast.LENGTH_SHORT).show();
         randint = random.nextInt(diff + 1);
@@ -76,10 +87,11 @@ public class LevelMainActivity extends BaseActivity {
 
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        boolean flag = false;
 
         setContentView(R.layout.lavel1_1);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -98,14 +110,31 @@ public class LevelMainActivity extends BaseActivity {
         MediaPlayer m10Player = MediaPlayer.create(LevelMainActivity.this, R.raw.demontheme);
         playerHealthView = findViewById(R.id.textView2);
         enemyHealthView = findViewById(R.id.enemy_hp_view);
+        enemyDamageTakenView = findViewById(R.id.enemy_damage_taken_view);
         Button skill1 = findViewById(R.id.skill1);
         Button skill2 = findViewById(R.id.skill2);
         Button skill3 = findViewById(R.id.skill3);
+        ImageView ap1_1 =findViewById(R.id.imageView2);
+        ImageView ap2_1 =findViewById(R.id.imageView3);
+        ImageView ap2_2 =findViewById(R.id.imageView4);
+        ImageView ap3_1 =findViewById(R.id.imageView5);
+        ImageView ap3_2 =findViewById(R.id.imageView6);
+        ImageView ap3_3 =findViewById(R.id.imageView7);
+        secondHealth=health;
 
-        health = secondHealth;
-
-
+        ap1_1.setImageResource(R.drawable.abilityisactivated);
+        ap2_1.setImageResource(R.drawable.abilityisactivated);
+        ap3_1.setImageResource(R.drawable.abilityisactivated);
+        ap2_2.setImageResource(R.drawable.abilityisnotactivated);
+        ap3_2.setImageResource(R.drawable.abilityisnotactivated);
+        ap3_3.setImageResource(R.drawable.abilityisnotactivated);
         playerHealthView.setText(""+secondHealth);
+        skill2.setEnabled(false);
+        skill3.setEnabled(false);
+
+
+
+
         switch (global.organizer.getCurrentlevel()) {
             case 1:
 
@@ -159,9 +188,11 @@ public class LevelMainActivity extends BaseActivity {
                 m10Player.setLooping(true);
                 break;
         }
+
         skill1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
 
                 switch (global.organizer.getCurrentlevel()){
@@ -170,7 +201,8 @@ public class LevelMainActivity extends BaseActivity {
 
                         player.AttackEnemy(slime);
                         enemyHealthView.setText(""+slime.getEHealth(slime));
-
+                        enemyDamageTakenView.setText("-"+pDamage);
+                        AbilityPoints++;
                         mhPlayer.start();
                         Handler handler1_1 = new Handler();
                         handler1_1.postDelayed(new Runnable() {
@@ -207,7 +239,10 @@ public class LevelMainActivity extends BaseActivity {
                         enemyHealthView.setText(""+zombie.getEHealth(zombie));
 
                         player.AttackEnemy(zombie);
+
                         enemyHealthView.setText(""+zombie.getEHealth(zombie));
+                        enemyDamageTakenView.setText("-"+pDamage);
+                        AbilityPoints++;
                         mhPlayer.start();
                         Handler handler1 = new Handler();
                         handler1.postDelayed(new Runnable() {
@@ -238,7 +273,8 @@ public class LevelMainActivity extends BaseActivity {
                         enemyHealthView.setText(""+dummy.getEHealth(dummy));
                         player.AttackEnemy(dummy);
                         enemyHealthView.setText(""+dummy.getEHealth(dummy));
-
+                        enemyDamageTakenView.setText("-"+pDamage);
+                        AbilityPoints++;
                         mhPlayer.start();
                         Handler handler2 = new Handler();
                         handler2.postDelayed(new Runnable() {
@@ -271,6 +307,8 @@ public class LevelMainActivity extends BaseActivity {
                         player.AttackEnemy(strangeCat);
                         enemyHealthView.setText(""+strangeCat.getEHealth(strangeCat));
                         mhPlayer.start();
+                        enemyDamageTakenView.setText("-"+pDamage);
+                        AbilityPoints++;
                         Handler handler3= new Handler();
                         handler3.postDelayed(new Runnable() {
                             @Override
@@ -299,6 +337,8 @@ public class LevelMainActivity extends BaseActivity {
                         enemyHealthView.setText(""+megaDog.getEHealth(megaDog));
                         player.AttackEnemy(megaDog);
                         enemyHealthView.setText(""+megaDog.getEHealth(megaDog));
+                        enemyDamageTakenView.setText("-"+pDamage);
+                        AbilityPoints++;
                         mhPlayer.start();
                         Handler handler4= new Handler();
                         handler4.postDelayed(new Runnable() {
@@ -329,6 +369,8 @@ public class LevelMainActivity extends BaseActivity {
                         enemyHealthView.setText(""+ghost.getEHealth(ghost));
                         player.AttackEnemy(ghost);
                         enemyHealthView.setText(""+ghost.getEHealth(ghost));
+                        enemyDamageTakenView.setText("-"+pDamage);
+                        AbilityPoints++;
                         mhPlayer.start();
                         Handler handler5= new Handler();
                         handler5.postDelayed(new Runnable() {
@@ -358,6 +400,8 @@ public class LevelMainActivity extends BaseActivity {
                         enemyHealthView.setText(""+ghoul.getEHealth(ghoul));
                         player.AttackEnemy(ghoul);
                         enemyHealthView.setText(""+ghoul.getEHealth(ghoul));
+                        enemyDamageTakenView.setText("-"+pDamage);
+                        AbilityPoints++;
                         mhPlayer.start();
                         Handler handler6= new Handler();
                         handler6.postDelayed(new Runnable() {
@@ -388,6 +432,8 @@ public class LevelMainActivity extends BaseActivity {
                         enemyHealthView.setText(""+сursedMage.getEHealth(сursedMage));
                         player.AttackEnemy(сursedMage);
                         enemyHealthView.setText(""+сursedMage.getEHealth(сursedMage));
+                        enemyDamageTakenView.setText("-"+pDamage);
+                        AbilityPoints++;
                         mhPlayer.start();
                         Handler handler7= new Handler();
                         handler7.postDelayed(new Runnable() {
@@ -419,6 +465,8 @@ public class LevelMainActivity extends BaseActivity {
                         enemyHealthView.setText(""+dragon.getEHealth(dragon));
                         player.AttackEnemy(dragon);
                         enemyHealthView.setText(""+dragon.getEHealth(dragon));
+                        enemyDamageTakenView.setText("-"+pDamage);
+                        AbilityPoints++;
                         mhPlayer.start();
                         Handler handler8= new Handler();
                         handler8.postDelayed(new Runnable() {
@@ -450,6 +498,8 @@ public class LevelMainActivity extends BaseActivity {
                         enemyHealthView.setText(""+demon.getEHealth(demon));
                         player.AttackEnemy(demon);
                         enemyHealthView.setText(""+demon.getEHealth(demon));
+                        enemyDamageTakenView.setText("-"+pDamage);
+                        AbilityPoints++;
                         mhPlayer.start();
                         Handler handler9= new Handler();
                         handler9.postDelayed(new Runnable() {
@@ -478,7 +528,41 @@ public class LevelMainActivity extends BaseActivity {
 
                 }
 
+                switch (AbilityPoints){
+                    case 1:
+                        ap1_1.setImageResource(R.drawable.abilityisactivated);
+                        ap2_1.setImageResource(R.drawable.abilityisactivated);
+                        ap3_1.setImageResource(R.drawable.abilityisactivated);
+                        ap2_2.setImageResource(R.drawable.abilityisnotactivated);
+                        ap3_2.setImageResource(R.drawable.abilityisnotactivated);
+                        ap3_3.setImageResource(R.drawable.abilityisnotactivated);
+                        skill2.setEnabled(false);
+                        skill3.setEnabled(false);
+                        break;
+                    case 2:
+                        ap1_1.setImageResource(R.drawable.abilityisactivated);
+                        ap2_1.setImageResource(R.drawable.abilityisactivated);
+                        ap3_1.setImageResource(R.drawable.abilityisactivated);
+                        ap2_2.setImageResource(R.drawable.abilityisactivated);
+                        ap3_2.setImageResource(R.drawable.abilityisactivated);
+                        ap3_3.setImageResource(R.drawable.abilityisnotactivated);
+                        skill2.setEnabled(true);
+                        skill3.setEnabled(false);
+                        break;
 
+
+                    case 3:
+                        ap1_1.setImageResource(R.drawable.abilityisactivated);
+                        ap2_1.setImageResource(R.drawable.abilityisactivated);
+                        ap3_1.setImageResource(R.drawable.abilityisactivated);
+                        ap2_2.setImageResource(R.drawable.abilityisactivated);
+                        ap3_2.setImageResource(R.drawable.abilityisactivated);
+                        ap3_3.setImageResource(R.drawable.abilityisactivated);
+                        skill2.setEnabled(true);
+                        skill3.setEnabled(true);
+                        break;
+
+                }
 
 
 
@@ -487,15 +571,18 @@ public class LevelMainActivity extends BaseActivity {
         skill2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 switch (global.organizer.getCurrentlevel()){
                     case 1:
-                        player.AttackEnemy(slime);
+                        enemyHealthView.setText(""+slime.getEHealth(slime));
+                        player.AttackEnemyX2(slime);
 
                         slime.attackPlayer(player);
 
                         Toast.makeText(getApplicationContext(), "" + LevelView.slime.getEHealth(slime), Toast.LENGTH_SHORT).show();
-
+                        enemyHealthView.setText(""+slime.getEHealth(slime));
                         playerHealthView.setText(""+secondHealth);
+                        enemyDamageTakenView.setText("-"+X2damage);
                         if (LevelView.slime.getEHealth(slime) <= 0) {
                             m1Player.stop();
                             global.nextLevel=2;
@@ -517,11 +604,13 @@ public class LevelMainActivity extends BaseActivity {
 
                         break;
                     case 2:
-                        player.AttackEnemy(zombie);
+                        enemyHealthView.setText(""+zombie.getEHealth(zombie));
+                        player.AttackEnemyX2(zombie);
                         zombie.attackPlayer(player);
                         Toast.makeText(getApplicationContext(), ""+LevelView.zombie.getEHealth(zombie), Toast.LENGTH_SHORT).show();
-
+                        enemyHealthView.setText(""+zombie.getEHealth(zombie));
                         playerHealthView.setText(""+secondHealth);
+                        enemyDamageTakenView.setText("-"+X2damage);
                         if(LevelView.zombie.getEHealth(zombie)<=0){
                             global.nextLevel=3;
                             m2Player.stop();
@@ -534,10 +623,13 @@ public class LevelMainActivity extends BaseActivity {
                         }
                         break;
                     case 3:
+                        enemyHealthView.setText(""+dummy.getEHealth(dummy));
                         player.AttackEnemy(dummy);
                         dummy.attackPlayer(player);
                         Toast.makeText(getApplicationContext(), ""+LevelView.dummy.getEHealth(dummy), Toast.LENGTH_SHORT).show();
+                        enemyHealthView.setText(""+dummy.getEHealth(dummy));
                         playerHealthView.setText(""+secondHealth);
+                        enemyDamageTakenView.setText("-"+X2damage);
 
                         if(LevelView.dummy.getEHealth(dummy)<=0){
                             m3Player.stop();
@@ -551,11 +643,13 @@ public class LevelMainActivity extends BaseActivity {
                         }
                         break;
                     case 4:
+                        enemyHealthView.setText(""+strangeCat.getEHealth(strangeCat));
                         player.AttackEnemy(strangeCat);
                         strangeCat.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
                         Toast.makeText(getApplicationContext(), ""+LevelView.strangeCat.getEHealth(strangeCat), Toast.LENGTH_SHORT).show();
-
+                        enemyHealthView.setText(""+strangeCat.getEHealth(strangeCat));
+                        enemyDamageTakenView.setText("-"+X2damage);
 
                         if(LevelView.strangeCat.getEHealth(strangeCat)<=0){
                             m4Player.stop();
@@ -570,10 +664,13 @@ public class LevelMainActivity extends BaseActivity {
 
                         break;
                     case 5:
+                        enemyHealthView.setText(""+megaDog.getEHealth(megaDog));
                         player.AttackEnemy(megaDog);
                         megaDog.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
                         Toast.makeText(getApplicationContext(), ""+LevelView.megaDog.getEHealth(megaDog), Toast.LENGTH_SHORT).show();
+                        enemyHealthView.setText(""+megaDog.getEHealth(megaDog));
+                        enemyDamageTakenView.setText("-"+X2damage);
 
 
                         if(LevelView.megaDog.getEHealth(megaDog)<=0){
@@ -588,10 +685,13 @@ public class LevelMainActivity extends BaseActivity {
                         }
                         break;
                     case 6:
+                        enemyHealthView.setText(""+ghost.getEHealth(ghost));
                         player.AttackEnemy(ghost);
                         ghost.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
                         Toast.makeText(getApplicationContext(), ""+LevelView.ghost.getEHealth(ghost), Toast.LENGTH_SHORT).show();
+                        enemyHealthView.setText(""+ghost.getEHealth(ghost));
+                        enemyDamageTakenView.setText("-"+X2damage);
 
 
                         if(LevelView.ghost.getEHealth(ghost)<=0){
@@ -606,10 +706,15 @@ public class LevelMainActivity extends BaseActivity {
                         }
                         break;
                     case 7:
+                        enemyHealthView.setText(""+ghoul.getEHealth(ghoul));
                         player.AttackEnemy(ghoul);
                         ghoul.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
                         Toast.makeText(getApplicationContext(), ""+LevelView.ghoul.getEHealth(ghoul), Toast.LENGTH_SHORT).show();
+                        enemyHealthView.setText(""+ghoul.getEHealth(ghoul));
+                        enemyDamageTakenView.setText("-"+X2damage);
+
+
 
 
                         if(LevelView.ghoul.getEHealth(ghoul)<=0){
@@ -624,10 +729,13 @@ public class LevelMainActivity extends BaseActivity {
                         }
                         break;
                     case 8:
+                        enemyHealthView.setText(""+сursedMage.getEHealth(сursedMage));
                         player.AttackEnemy(сursedMage);
                         сursedMage.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
                         Toast.makeText(getApplicationContext(), ""+LevelView.сursedMage.getEHealth(сursedMage), Toast.LENGTH_SHORT).show();
+                        enemyHealthView.setText(""+сursedMage.getEHealth(сursedMage));
+                        enemyDamageTakenView.setText("-"+X2damage);
 
 
                         if(LevelView.сursedMage.getEHealth(сursedMage)<=0){
@@ -641,10 +749,14 @@ public class LevelMainActivity extends BaseActivity {
                         }
                         break;
                     case 9:
+                        enemyHealthView.setText(""+dragon.getEHealth(dragon));
+
                         player.AttackEnemy(dragon);
                         dragon.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
                         Toast.makeText(getApplicationContext(), ""+LevelView.dragon.getEHealth(dragon), Toast.LENGTH_SHORT).show();
+                        enemyHealthView.setText(""+dragon.getEHealth(dragon));
+                        enemyDamageTakenView.setText("-"+X2damage);
 
 
                         if(LevelView.dragon.getEHealth(dragon)<=0){
@@ -659,10 +771,14 @@ public class LevelMainActivity extends BaseActivity {
                         }
                         break;
                     case 10:
+                        enemyHealthView.setText(""+demon.getEHealth(demon));
+
                         player.AttackEnemy(demon);
                         demon.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
                         Toast.makeText(getApplicationContext(), ""+LevelView.demon.getEHealth(demon), Toast.LENGTH_SHORT).show();
+                        enemyHealthView.setText(""+demon.getEHealth(demon));
+                        enemyDamageTakenView.setText("-"+X2damage);
 
 
                         if(LevelView.demon.getEHealth(demon)<=0){
@@ -676,9 +792,15 @@ public class LevelMainActivity extends BaseActivity {
                         break;
 
                 }
+                AbilityPoints=1;
 
-
-
+                skill2.setEnabled(false);
+                ap1_1.setImageResource(R.drawable.abilityisactivated);
+                ap2_1.setImageResource(R.drawable.abilityisactivated);
+                ap3_1.setImageResource(R.drawable.abilityisactivated);
+                ap2_2.setImageResource(R.drawable.abilityisnotactivated);
+                ap3_2.setImageResource(R.drawable.abilityisnotactivated);
+                ap3_3.setImageResource(R.drawable.abilityisnotactivated);
 
 
             }
@@ -686,6 +808,9 @@ public class LevelMainActivity extends BaseActivity {
         skill3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                secondHealth+=20;
+                playerHealthView.setText(""+secondHealth);
+                /*
                 switch (global.organizer.getCurrentlevel()){
                     case 1:
                         player.AttackEnemy(slime);
@@ -876,7 +1001,16 @@ public class LevelMainActivity extends BaseActivity {
 
                 }
 
-
+                 */
+                AbilityPoints=1;
+                skill2.setEnabled(false);
+                skill3.setEnabled(false);
+                ap1_1.setImageResource(R.drawable.abilityisactivated);
+                ap2_1.setImageResource(R.drawable.abilityisactivated);
+                ap3_1.setImageResource(R.drawable.abilityisactivated);
+                ap2_2.setImageResource(R.drawable.abilityisnotactivated);
+                ap3_2.setImageResource(R.drawable.abilityisnotactivated);
+                ap3_3.setImageResource(R.drawable.abilityisnotactivated);
 
             }
         });
@@ -889,6 +1023,7 @@ public class LevelMainActivity extends BaseActivity {
 
 
     }
+
     public TextView getHealthView(){
         return playerHealthView;
     }

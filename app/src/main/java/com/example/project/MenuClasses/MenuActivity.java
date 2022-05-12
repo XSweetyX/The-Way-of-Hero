@@ -28,12 +28,24 @@ public class MenuActivity extends BaseActivity {
         MediaPlayer mmPlayer = MediaPlayer.create(MenuActivity.this, R.raw.mainsound);
         Button playButton= (Button) findViewById(R.id.playButton);
         Button stopButton = (Button) findViewById(R.id.stopButton);
+
         final TextView StartGame = (TextView)findViewById(R.id.start);
         final TextView GameSettings = (TextView)findViewById(R.id.settings);
         final TextView AboutGame = (TextView)findViewById(R.id.about);
         //final TextView QuickGame = (TextView)findViewById(R.id.quick);
         final TextView ExitGame = (TextView)findViewById(R.id.exit);
-        
+        ExitGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //эмулируем нажатие на HOME, сворачивая приложение
+                Intent i = new Intent(Intent.ACTION_MAIN);
+                i.addCategory(Intent.CATEGORY_HOME);
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+                MenuActivity.this.finish();
+                stopService(new Intent(MenuActivity.this, MyService.class));
+            }
+        });
         StartGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

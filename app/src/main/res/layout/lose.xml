@@ -4,11 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="723dp"
+        android:layout_height="411dp"
+
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleX="1.7"
+        android:scaleY="1"
+        android:src="@drawable/winbg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/continue_lose_but"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#EAE087"
+        android:fontFamily="@font/f1"
         android:text="continue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,9 +34,11 @@
 
     <TextView
         android:id="@+id/loseView"
-        android:layout_width="297dp"
-        android:layout_height="77dp"
+        android:layout_width="375dp"
+        android:layout_height="65dp"
+        android:fontFamily="@font/f1"
         android:text="YOU LOSE"
+        android:textColor="#FFFFFF"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
