@@ -576,7 +576,7 @@ public class LevelMainActivity extends BaseActivity {
                     case 1:
                         enemyHealthView.setText(""+slime.getEHealth(slime));
                         player.AttackEnemyX2(slime);
-
+                        mhPlayer.start();
                         slime.attackPlayer(player);
 
                         Toast.makeText(getApplicationContext(), "" + LevelView.slime.getEHealth(slime), Toast.LENGTH_SHORT).show();
@@ -606,6 +606,7 @@ public class LevelMainActivity extends BaseActivity {
                     case 2:
                         enemyHealthView.setText(""+zombie.getEHealth(zombie));
                         player.AttackEnemyX2(zombie);
+                        mhPlayer.start();
                         zombie.attackPlayer(player);
                         Toast.makeText(getApplicationContext(), ""+LevelView.zombie.getEHealth(zombie), Toast.LENGTH_SHORT).show();
                         enemyHealthView.setText(""+zombie.getEHealth(zombie));
@@ -624,7 +625,8 @@ public class LevelMainActivity extends BaseActivity {
                         break;
                     case 3:
                         enemyHealthView.setText(""+dummy.getEHealth(dummy));
-                        player.AttackEnemy(dummy);
+                        player.AttackEnemyX2(dummy);
+                        mhPlayer.start();
                         dummy.attackPlayer(player);
                         Toast.makeText(getApplicationContext(), ""+LevelView.dummy.getEHealth(dummy), Toast.LENGTH_SHORT).show();
                         enemyHealthView.setText(""+dummy.getEHealth(dummy));
@@ -644,7 +646,8 @@ public class LevelMainActivity extends BaseActivity {
                         break;
                     case 4:
                         enemyHealthView.setText(""+strangeCat.getEHealth(strangeCat));
-                        player.AttackEnemy(strangeCat);
+                        player.AttackEnemyX2(strangeCat);
+                        mhPlayer.start();
                         strangeCat.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
                         Toast.makeText(getApplicationContext(), ""+LevelView.strangeCat.getEHealth(strangeCat), Toast.LENGTH_SHORT).show();
@@ -665,7 +668,8 @@ public class LevelMainActivity extends BaseActivity {
                         break;
                     case 5:
                         enemyHealthView.setText(""+megaDog.getEHealth(megaDog));
-                        player.AttackEnemy(megaDog);
+                        player.AttackEnemyX2(megaDog);
+                        mhPlayer.start();
                         megaDog.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
                         Toast.makeText(getApplicationContext(), ""+LevelView.megaDog.getEHealth(megaDog), Toast.LENGTH_SHORT).show();
@@ -686,7 +690,8 @@ public class LevelMainActivity extends BaseActivity {
                         break;
                     case 6:
                         enemyHealthView.setText(""+ghost.getEHealth(ghost));
-                        player.AttackEnemy(ghost);
+                        player.AttackEnemyX2(ghost);
+                        mhPlayer.start();
                         ghost.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
                         Toast.makeText(getApplicationContext(), ""+LevelView.ghost.getEHealth(ghost), Toast.LENGTH_SHORT).show();
@@ -707,7 +712,8 @@ public class LevelMainActivity extends BaseActivity {
                         break;
                     case 7:
                         enemyHealthView.setText(""+ghoul.getEHealth(ghoul));
-                        player.AttackEnemy(ghoul);
+                        player.AttackEnemyX2(ghoul);
+                        mhPlayer.start();
                         ghoul.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
                         Toast.makeText(getApplicationContext(), ""+LevelView.ghoul.getEHealth(ghoul), Toast.LENGTH_SHORT).show();
@@ -730,7 +736,8 @@ public class LevelMainActivity extends BaseActivity {
                         break;
                     case 8:
                         enemyHealthView.setText(""+сursedMage.getEHealth(сursedMage));
-                        player.AttackEnemy(сursedMage);
+                        player.AttackEnemyX2(сursedMage);
+                        mhPlayer.start();
                         сursedMage.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
                         Toast.makeText(getApplicationContext(), ""+LevelView.сursedMage.getEHealth(сursedMage), Toast.LENGTH_SHORT).show();
@@ -751,7 +758,8 @@ public class LevelMainActivity extends BaseActivity {
                     case 9:
                         enemyHealthView.setText(""+dragon.getEHealth(dragon));
 
-                        player.AttackEnemy(dragon);
+                        player.AttackEnemyX2(dragon);
+                        mhPlayer.start();
                         dragon.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
                         Toast.makeText(getApplicationContext(), ""+LevelView.dragon.getEHealth(dragon), Toast.LENGTH_SHORT).show();
@@ -773,7 +781,8 @@ public class LevelMainActivity extends BaseActivity {
                     case 10:
                         enemyHealthView.setText(""+demon.getEHealth(demon));
 
-                        player.AttackEnemy(demon);
+                        player.AttackEnemyX2(demon);
+                        mhPlayer.start();
                         demon.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
                         Toast.makeText(getApplicationContext(), ""+LevelView.demon.getEHealth(demon), Toast.LENGTH_SHORT).show();
@@ -810,198 +819,7 @@ public class LevelMainActivity extends BaseActivity {
             public void onClick(View v) {
                 secondHealth+=20;
                 playerHealthView.setText(""+secondHealth);
-                /*
-                switch (global.organizer.getCurrentlevel()){
-                    case 1:
-                        player.AttackEnemy(slime);
 
-                        slime.attackPlayer(player);
-
-                        Toast.makeText(getApplicationContext(), "" + LevelView.slime.getEHealth(slime), Toast.LENGTH_SHORT).show();
-
-                        playerHealthView.setText(""+secondHealth);
-                        if (LevelView.slime.getEHealth(slime) <= 0) {
-                            m1Player.stop();
-                            global.nextLevel=2;
-                            LevelMainActivity.this.takeVictory();
-
-
-                        }else if(secondHealth<=0){
-                            m1Player.stop();
-                            LevelMainActivity.this.takeLose();
-
-                        }
-
-
-
-
-
-
-
-
-                        break;
-                    case 2:
-                        player.AttackEnemy(zombie);
-                        zombie.attackPlayer(player);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.zombie.getEHealth(zombie), Toast.LENGTH_SHORT).show();
-
-                        playerHealthView.setText(""+secondHealth);
-                        if(LevelView.zombie.getEHealth(zombie)<=0){
-                            global.nextLevel=3;
-                            m2Player.stop();
-                            LevelMainActivity.this.takeVictory();
-
-
-                        }else if(secondHealth<=0){
-                            m2Player.stop();
-                            LevelMainActivity.this.takeLose();
-                        }
-                        break;
-                    case 3:
-                        player.AttackEnemy(dummy);
-                        dummy.attackPlayer(player);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.dummy.getEHealth(dummy), Toast.LENGTH_SHORT).show();
-                        playerHealthView.setText(""+secondHealth);
-
-                        if(LevelView.dummy.getEHealth(dummy)<=0){
-                            m3Player.stop();
-                            global.nextLevel=4;
-                            LevelMainActivity.this.takeVictory();
-
-
-                        }else if(secondHealth<=0){
-                            m3Player.stop();
-                            LevelMainActivity.this.takeLose();
-                        }
-                        break;
-                    case 4:
-                        player.AttackEnemy(strangeCat);
-                        strangeCat.attackPlayer(player);
-                        playerHealthView.setText(""+secondHealth);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.strangeCat.getEHealth(strangeCat), Toast.LENGTH_SHORT).show();
-
-
-                        if(LevelView.strangeCat.getEHealth(strangeCat)<=0){
-                            m4Player.stop();
-                            global.nextLevel=5;
-                            LevelMainActivity.this.takeVictory();
-
-
-                        }else if(secondHealth<=0){
-                            m4Player.stop();
-                            LevelMainActivity.this.takeLose();
-                        }
-
-                        break;
-                    case 5:
-                        player.AttackEnemy(megaDog);
-                        megaDog.attackPlayer(player);
-                        playerHealthView.setText(""+secondHealth);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.megaDog.getEHealth(megaDog), Toast.LENGTH_SHORT).show();
-
-
-                        if(LevelView.megaDog.getEHealth(megaDog)<=0){
-                            m5Player.stop();
-                            global.nextLevel=6;
-                            LevelMainActivity.this.takeVictory();
-
-
-                        }else if(secondHealth<=0){
-                            m5Player.stop();
-                            LevelMainActivity.this.takeLose();
-                        }
-                        break;
-                    case 6:
-                        player.AttackEnemy(ghost);
-                        ghost.attackPlayer(player);
-                        playerHealthView.setText(""+secondHealth);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.ghost.getEHealth(ghost), Toast.LENGTH_SHORT).show();
-
-
-                        if(LevelView.ghost.getEHealth(ghost)<=0){
-                            m6Player.stop();
-                            global.nextLevel=7;
-                            LevelMainActivity.this.takeVictory();
-
-
-                        }else if(secondHealth<=0){
-                            m6Player.stop();
-                            LevelMainActivity.this.takeLose();
-                        }
-                        break;
-                    case 7:
-                        player.AttackEnemy(ghoul);
-                        ghoul.attackPlayer(player);
-                        playerHealthView.setText(""+secondHealth);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.ghoul.getEHealth(ghoul), Toast.LENGTH_SHORT).show();
-
-
-                        if(LevelView.ghoul.getEHealth(ghoul)<=0){
-                            m7Player.stop();
-                            global.nextLevel=8;
-                            LevelMainActivity.this.takeVictory();
-
-
-                        }else if(secondHealth<=0){
-                            m7Player.stop();
-                            LevelMainActivity.this.takeLose();
-                        }
-                        break;
-                    case 8:
-                        player.AttackEnemy(сursedMage);
-                        сursedMage.attackPlayer(player);
-                        playerHealthView.setText(""+secondHealth);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.сursedMage.getEHealth(сursedMage), Toast.LENGTH_SHORT).show();
-
-
-                        if(LevelView.сursedMage.getEHealth(сursedMage)<=0){
-                            m8Player.stop();
-                            global.nextLevel=9;
-                            LevelMainActivity.this.takeVictory();
-
-                        }else if(secondHealth<=0){
-                            m8Player.stop();
-                            LevelMainActivity.this.takeLose();
-                        }
-                        break;
-                    case 9:
-                        player.AttackEnemy(dragon);
-                        dragon.attackPlayer(player);
-                        playerHealthView.setText(""+secondHealth);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.dragon.getEHealth(dragon), Toast.LENGTH_SHORT).show();
-
-
-                        if(LevelView.dragon.getEHealth(dragon)<=0){
-                            m9Player.stop();
-                            global.nextLevel=10;
-                            LevelMainActivity.this.takeVictory();
-
-
-                        }else if(secondHealth<=0){
-                            m9Player.stop();
-                            LevelMainActivity.this.takeLose();
-                        }
-                        break;
-                    case 10:
-                        player.AttackEnemy(demon);
-                        demon.attackPlayer(player);
-                        playerHealthView.setText(""+secondHealth);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.demon.getEHealth(demon), Toast.LENGTH_SHORT).show();
-
-
-                        if(LevelView.demon.getEHealth(demon)<=0){
-                            m10Player.stop();
-                            LevelMainActivity.this.takeVictory();
-
-                        }else if(secondHealth<=0){
-                            m10Player.stop();
-                            LevelMainActivity.this.takeLose();
-                        }
-                        break;
-
-                }
-
-                 */
                 AbilityPoints=1;
                 skill2.setEnabled(false);
                 skill3.setEnabled(false);

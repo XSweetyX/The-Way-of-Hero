@@ -174,7 +174,7 @@ public class LevelThread extends Thread{
 
                         break;
                     case 9:
-                        canvas.drawBitmap(dragonBitmap,dragon.getEX(),dragon.getEY(),backgroundPaint);
+                        canvas.drawBitmap(dragonBitmap,dragon.getEX()+500,dragon.getEY()-200,backgroundPaint);
 
                         break;
                     case 10:
