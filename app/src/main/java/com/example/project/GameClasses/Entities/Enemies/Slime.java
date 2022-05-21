@@ -35,17 +35,17 @@ public class Slime extends Enemy{
     }
 
 
-    public void Supdate(Canvas canvas, Context context) {//Все ресурсы и объекты для рисования брать из Level1l1Tread
+    public void Supdate(Canvas canvas, Context context) {
         LevelThread.canvas = canvas;//обязательно передать canvas из tread
         long now = System.nanoTime();
-        //System.out.println("Updated");
+
         if (this.eHealth<=0){
             slimeBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ripstone);
             canvas.drawBitmap(slimeBitmap,this.getEX(),650, LevelThread.backgroundPaint);
 
         }
         // Never once did draw.
-        if (lastDrawNanoTime == -1) {//Важная строчка (хз зачем нужна , но без неё не работает )
+        if (lastDrawNanoTime == -1) {
             lastDrawNanoTime = now;
         }
     }

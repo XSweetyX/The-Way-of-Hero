@@ -1,6 +1,7 @@
 package com.example.project.MenuClasses;
 
 
+import static com.example.project.GameClasses.Entities.Player.X2damage;
 import static com.example.project.GameClasses.Interface.Global.BITMAPKEY;
 import static com.example.project.GameClasses.Interface.Global.DESCKEY;
 import static com.example.project.GameClasses.Interface.Global.HPKEY;
@@ -136,7 +137,7 @@ public class InventoryActivity extends BaseActivity {
                         weaponImage.setImageResource(global.playerItems.getItemOneImage(3));
                         int intParsed2 = Integer.parseInt (String.valueOf(hm.get(HPKEY1)));
                         pDamage+=intParsed2;
-
+                        X2damage= intParsed2*2+6;
 
 
                     }

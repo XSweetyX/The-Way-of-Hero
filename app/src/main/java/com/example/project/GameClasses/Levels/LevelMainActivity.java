@@ -64,6 +64,7 @@ public class LevelMainActivity extends BaseActivity {
         mlPlayer.start();
         AbilityPoints=1;
         objectLevelThread.setRunning(false);
+        Toast.makeText(getApplicationContext(), "Вы проиграли", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(LevelMainActivity.this, LoseActivity.class));
         secondHealth =health;
         LevelMainActivity.this.finish();
@@ -72,7 +73,7 @@ public class LevelMainActivity extends BaseActivity {
         mwPlayer.start();
         AbilityPoints=1;
         randomize =true;
-        Toast.makeText(getApplicationContext(), "You Won", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Вы выйграли", Toast.LENGTH_SHORT).show();
         randint = random.nextInt(diff + 1);
         global.itemStorage.addItem( randint);
         objectLevelThread.setRunning(false);
@@ -215,7 +216,7 @@ public class LevelMainActivity extends BaseActivity {
                         }, 1000);
 
 
-                        Toast.makeText(getApplicationContext(), "" + LevelView.slime.getEHealth(slime), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: " + LevelView.slime.getEHealth(slime), Toast.LENGTH_SHORT).show();
                         if (LevelView.slime.getEHealth(slime) <= 0) {
                             m1Player.stop();
                             global.nextLevel=2;
@@ -255,7 +256,7 @@ public class LevelMainActivity extends BaseActivity {
                         }, 1000);
 
 
-                        Toast.makeText(getApplicationContext(), "" + LevelView.zombie.getEHealth(zombie), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: " + LevelView.zombie.getEHealth(zombie), Toast.LENGTH_SHORT).show();
 
                         if (LevelView.zombie.getEHealth(zombie) <= 0) {
                             m2Player.stop();
@@ -287,7 +288,7 @@ public class LevelMainActivity extends BaseActivity {
                         }, 1000);
 
 
-                        Toast.makeText(getApplicationContext(), "" + LevelView.dummy.getEHealth(dummy), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: " + LevelView.dummy.getEHealth(dummy), Toast.LENGTH_SHORT).show();
 
                         if (LevelView.dummy.getEHealth(dummy) <= 0) {
                             m3Player.stop();
@@ -320,7 +321,7 @@ public class LevelMainActivity extends BaseActivity {
                         }, 1000);
 
 
-                        Toast.makeText(getApplicationContext(), "" + LevelView.strangeCat.getEHealth(strangeCat), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: " + LevelView.strangeCat.getEHealth(strangeCat), Toast.LENGTH_SHORT).show();
                         if (LevelView.strangeCat.getEHealth(strangeCat) <= 0) {
                             m4Player.stop();
                             global.nextLevel=5;
@@ -351,7 +352,7 @@ public class LevelMainActivity extends BaseActivity {
                         }, 1000);
 
 
-                        Toast.makeText(getApplicationContext(), "" + LevelView.megaDog.getEHealth(megaDog), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: " + LevelView.megaDog.getEHealth(megaDog), Toast.LENGTH_SHORT).show();
 
                         if (LevelView.megaDog.getEHealth(megaDog) <= 0) {
                             m5Player.stop();
@@ -383,7 +384,7 @@ public class LevelMainActivity extends BaseActivity {
                         }, 1000);
 
 
-                        Toast.makeText(getApplicationContext(), "" + LevelView.ghost.getEHealth(ghost), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: " + LevelView.ghost.getEHealth(ghost), Toast.LENGTH_SHORT).show();
                         if (LevelView.ghost.getEHealth(ghost) <= 0) {
                             m6Player.stop();
                             global.nextLevel=7;
@@ -414,7 +415,7 @@ public class LevelMainActivity extends BaseActivity {
                         }, 1000);
 
 
-                        Toast.makeText(getApplicationContext(), "" + LevelView.ghoul.getEHealth(ghoul), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: " + LevelView.ghoul.getEHealth(ghoul), Toast.LENGTH_SHORT).show();
 
                         if (LevelView.ghoul.getEHealth(ghoul) <= 0) {
                             m7Player.stop();
@@ -446,7 +447,7 @@ public class LevelMainActivity extends BaseActivity {
                         }, 1000);
 
 
-                        Toast.makeText(getApplicationContext(), "" + LevelView.сursedMage.getEHealth(сursedMage), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: " + LevelView.сursedMage.getEHealth(сursedMage), Toast.LENGTH_SHORT).show();
 
                         if (LevelView.сursedMage.getEHealth(сursedMage) <= 0) {
                             m8Player.stop();
@@ -479,7 +480,7 @@ public class LevelMainActivity extends BaseActivity {
                         }, 1000);
 
 
-                        Toast.makeText(getApplicationContext(), "" + LevelView.dragon.getEHealth(dragon), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: " + LevelView.dragon.getEHealth(dragon), Toast.LENGTH_SHORT).show();
 
                         if (LevelView.dragon.getEHealth(dragon) <= 0) {
                             m9Player.stop();
@@ -512,7 +513,7 @@ public class LevelMainActivity extends BaseActivity {
                         }, 1000);
 
 
-                        Toast.makeText(getApplicationContext(), "" + LevelView.demon.getEHealth(demon), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: " + LevelView.demon.getEHealth(demon), Toast.LENGTH_SHORT).show();
                         if (LevelView.demon.getEHealth(demon) <= 0) {
                             m10Player.stop();
                             global.nextLevel=2;
@@ -579,7 +580,7 @@ public class LevelMainActivity extends BaseActivity {
                         mhPlayer.start();
                         slime.attackPlayer(player);
 
-                        Toast.makeText(getApplicationContext(), "" + LevelView.slime.getEHealth(slime), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: " + LevelView.slime.getEHealth(slime), Toast.LENGTH_SHORT).show();
                         enemyHealthView.setText(""+slime.getEHealth(slime));
                         playerHealthView.setText(""+secondHealth);
                         enemyDamageTakenView.setText("-"+X2damage);
@@ -608,7 +609,7 @@ public class LevelMainActivity extends BaseActivity {
                         player.AttackEnemyX2(zombie);
                         mhPlayer.start();
                         zombie.attackPlayer(player);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.zombie.getEHealth(zombie), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: "+LevelView.zombie.getEHealth(zombie), Toast.LENGTH_SHORT).show();
                         enemyHealthView.setText(""+zombie.getEHealth(zombie));
                         playerHealthView.setText(""+secondHealth);
                         enemyDamageTakenView.setText("-"+X2damage);
@@ -650,7 +651,7 @@ public class LevelMainActivity extends BaseActivity {
                         mhPlayer.start();
                         strangeCat.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.strangeCat.getEHealth(strangeCat), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: "+LevelView.strangeCat.getEHealth(strangeCat), Toast.LENGTH_SHORT).show();
                         enemyHealthView.setText(""+strangeCat.getEHealth(strangeCat));
                         enemyDamageTakenView.setText("-"+X2damage);
 
@@ -672,7 +673,7 @@ public class LevelMainActivity extends BaseActivity {
                         mhPlayer.start();
                         megaDog.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.megaDog.getEHealth(megaDog), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: "+LevelView.megaDog.getEHealth(megaDog), Toast.LENGTH_SHORT).show();
                         enemyHealthView.setText(""+megaDog.getEHealth(megaDog));
                         enemyDamageTakenView.setText("-"+X2damage);
 
@@ -694,7 +695,7 @@ public class LevelMainActivity extends BaseActivity {
                         mhPlayer.start();
                         ghost.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.ghost.getEHealth(ghost), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: "+LevelView.ghost.getEHealth(ghost), Toast.LENGTH_SHORT).show();
                         enemyHealthView.setText(""+ghost.getEHealth(ghost));
                         enemyDamageTakenView.setText("-"+X2damage);
 
@@ -716,7 +717,7 @@ public class LevelMainActivity extends BaseActivity {
                         mhPlayer.start();
                         ghoul.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.ghoul.getEHealth(ghoul), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: "+LevelView.ghoul.getEHealth(ghoul), Toast.LENGTH_SHORT).show();
                         enemyHealthView.setText(""+ghoul.getEHealth(ghoul));
                         enemyDamageTakenView.setText("-"+X2damage);
 
@@ -740,7 +741,7 @@ public class LevelMainActivity extends BaseActivity {
                         mhPlayer.start();
                         сursedMage.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.сursedMage.getEHealth(сursedMage), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: "+LevelView.сursedMage.getEHealth(сursedMage), Toast.LENGTH_SHORT).show();
                         enemyHealthView.setText(""+сursedMage.getEHealth(сursedMage));
                         enemyDamageTakenView.setText("-"+X2damage);
 
@@ -762,7 +763,7 @@ public class LevelMainActivity extends BaseActivity {
                         mhPlayer.start();
                         dragon.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.dragon.getEHealth(dragon), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: "+LevelView.dragon.getEHealth(dragon), Toast.LENGTH_SHORT).show();
                         enemyHealthView.setText(""+dragon.getEHealth(dragon));
                         enemyDamageTakenView.setText("-"+X2damage);
 
@@ -785,7 +786,7 @@ public class LevelMainActivity extends BaseActivity {
                         mhPlayer.start();
                         demon.attackPlayer(player);
                         playerHealthView.setText(""+secondHealth);
-                        Toast.makeText(getApplicationContext(), ""+LevelView.demon.getEHealth(demon), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "HP Врага: "+LevelView.demon.getEHealth(demon), Toast.LENGTH_SHORT).show();
                         enemyHealthView.setText(""+demon.getEHealth(demon));
                         enemyDamageTakenView.setText("-"+X2damage);
 
@@ -818,6 +819,8 @@ public class LevelMainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 secondHealth+=20;
+                Toast.makeText(getApplicationContext(), "Игрок восстановил 20 HP", Toast.LENGTH_SHORT).show();
+
                 playerHealthView.setText(""+secondHealth);
 
                 AbilityPoints=1;

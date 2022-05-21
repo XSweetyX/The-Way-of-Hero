@@ -29,7 +29,7 @@ public class Demon extends Enemy{
 
         }
         // Never once did draw.
-        if (lastDrawNanoTime == -1) {//Важная строчка (хз зачем нужна , но без неё не работает )
+        if (lastDrawNanoTime == -1) {
             lastDrawNanoTime = now;
         }
     }
